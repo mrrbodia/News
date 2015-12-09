@@ -33,5 +33,10 @@ namespace News.Business.Components.Managers
         {
             provider.Delete(id);
         }
+
+        public virtual IList<T> GetList()
+        {
+            return provider.GetList();
+        }
     }
 }

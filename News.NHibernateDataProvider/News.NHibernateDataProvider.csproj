@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DataProviders\NHibernateDataProviderBase.cs" />
+    <Compile Include="DataProviders\NHibernateTidingsDataProvider.cs" />
     <Compile Include="DataProviders\NHibernateRoleDataProvider.cs" />
     <Compile Include="DataProviders\NHibernateUserDataProvider.cs" />
     <Compile Include="NHibernateCore\Helper.cs" />
     <Compile Include="NHibernateCore\Mappings\RoleMap.cs" />
+    <Compile Include="NHibernateCore\Mappings\TidingsMap.cs" />
     <Compile Include="NHibernateCore\Mappings\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

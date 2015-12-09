@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using News.Business.Models;
 using NHibernate;
 using News.NHibernateDataProvider.NHibernateCore;
+using NHibernate.Criterion;
+using NHibernate.Linq;
 
 namespace News.NHibernateDataProvider.DataProviders
 {
@@ -73,6 +75,15 @@ namespace News.NHibernateDataProvider.DataProviders
                     transaction.Commit();
                 }
 
+            });
+        }
+
+        public virtual IList<TEntity> GetList()
+        {
+            return Execute(session =>
+            {
+                var listTEntity = session.Query<TEntity>().ToList();
+                return listTEntity;
             });
         }
     }

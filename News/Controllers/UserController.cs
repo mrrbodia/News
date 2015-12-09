@@ -77,8 +77,6 @@ namespace News.Controllers
 
             admin.Role = roleAdmin;
             userManager.Create(admin);
-
-            // provider.Create(admin);
         }
     }
 }

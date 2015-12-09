@@ -44,15 +44,19 @@
     <Compile Include="Components\HashDecoder.cs" />
     <Compile Include="Components\Managers\BaseManager.cs" />
     <Compile Include="Components\Managers\RoleManager.cs" />
+    <Compile Include="Components\Managers\TidingManager.cs" />
     <Compile Include="Components\Managers\UserManager.cs" />
     <Compile Include="IDataProviders\IDataProvider.cs" />
     <Compile Include="IDataProviders\IRoleDataProvider.cs" />
+    <Compile Include="IDataProviders\ITidingsDataProvider.cs" />
     <Compile Include="IDataProviders\IUserDataProvider.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Tidings.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\TidingsViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

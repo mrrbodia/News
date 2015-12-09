@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using News.Business.Models;
 
 namespace News.Business.IDataProviders
 {
-    public interface IDataProvider<T>
+    public interface ITidingsDataProvider : IDataProvider<Tidings>
     {
-        void Create(T model);
-
-        void Update(T model);
-
-        void Delete(string id);
-
-        IList<T> GetList();
     }
 }
