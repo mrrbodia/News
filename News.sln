@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "News", "News\News.csproj", "{99BF9408-E68F-4D0C-BE28-622843D545D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "News.Business", "News.Business\News.Business.csproj", "{FA8FAE3F-8958-4AA2-838A-A92DC6245E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "News.NHibernateDataProvider", "News.NHibernateDataProvider\News.NHibernateDataProvider.csproj", "{5B21E022-BC29-411F-83AC-BBB80F201A8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99BF9408-E68F-4D0C-BE28-622843D545D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BF9408-E68F-4D0C-BE28-622843D545D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BF9408-E68F-4D0C-BE28-622843D545D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BF9408-E68F-4D0C-BE28-622843D545D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8FAE3F-8958-4AA2-838A-A92DC6245E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8FAE3F-8958-4AA2-838A-A92DC6245E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8FAE3F-8958-4AA2-838A-A92DC6245E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8FAE3F-8958-4AA2-838A-A92DC6245E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B21E022-BC29-411F-83AC-BBB80F201A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B21E022-BC29-411F-83AC-BBB80F201A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B21E022-BC29-411F-83AC-BBB80F201A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B21E022-BC29-411F-83AC-BBB80F201A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
