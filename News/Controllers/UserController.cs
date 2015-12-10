@@ -71,7 +71,7 @@ namespace News.Controllers
         public void SetNewRole()
         {
             User admin = new User();
-            admin.Email = "Filler@gmail.com";
+            admin.Email = "Filler2@gmail.com";
             admin.PasswordSalt = HashDecoder.GenarateSalt();
             admin.Password = HashDecoder.ComputeHash("IFiller", admin.PasswordSalt);
 

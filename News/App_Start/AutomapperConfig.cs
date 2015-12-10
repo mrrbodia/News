@@ -27,6 +27,7 @@ namespace News.App_Start
             Mapper
              .CreateMap<TidingsViewModel, Tidings>()
              .IncludeBase<BaseViewModel, BaseModel>();
+             //.ForMember(s => s.AuthorId, otp => otp.Ignore());
         }
     }
 }

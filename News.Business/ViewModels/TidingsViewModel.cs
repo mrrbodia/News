@@ -17,6 +17,8 @@ namespace News.Business.ViewModels
         [Required(ErrorMessage = "Поле повинно бути заповнено")]
         public virtual string Discription { get; set; }
 
+        public virtual string AuthorId { get; set; }
+
         public virtual DateTime PublishData { get; set; }
 
         public TidingsViewModel()

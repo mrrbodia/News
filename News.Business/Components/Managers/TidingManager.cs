@@ -12,6 +12,11 @@ namespace News.Business.Components.Managers
 {
     public class TidingManager : BaseManager<Tidings, ITidingsDataProvider>
     {
-        public TidingManager(ITidingsDataProvider provider) : base(provider) {}
+        public TidingManager(ITidingsDataProvider provider) : base(provider) { }
+
+        public IList<Tidings> GetForAuthor(string id)
+        {
+            return provider.GetForAuthor(id);
+        }
     }
 }

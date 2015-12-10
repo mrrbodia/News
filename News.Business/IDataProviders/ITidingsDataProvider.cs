@@ -9,5 +9,6 @@ namespace News.Business.IDataProviders
 {
     public interface ITidingsDataProvider : IDataProvider<Tidings>
     {
+        IList<Tidings> GetForAuthor(string id);
     }
 }

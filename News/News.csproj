@@ -246,9 +246,7 @@
     <Content Include="Views\Tidings\Create.cshtml" />
     <Content Include="Views\Tidings\Update.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

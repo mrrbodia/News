@@ -41,15 +41,14 @@ namespace News.Business.Components.Managers
             return provider.GetList();
         }
 
-        public string Serialize<T>(T dataToSerialize)
+        public string Serialize(IList<T> model)
         {
             try
             {
-                var stringwriter = new System.IO.StringWriter();
-                var serializer = new XmlSerializer(typeof(T));
-                serializer.Serialize(stringwriter, dataToSerialize);
-                string str = stringwriter.ToString();
-                return str;
+                var stringwriter = new StringWriter();
+                var serializer = new XmlSerializer(typeof(List<T>));
+                serializer.Serialize(stringwriter, model);
+                return stringwriter.ToString();
             }
             catch
             {
@@ -57,13 +56,13 @@ namespace News.Business.Components.Managers
             }
         }
 
-        public T Deserialize<T>(string xmlText)
+        public IList<T> Deserialize(string xml)
         {
             try
             {
-                var stringReader = new System.IO.StringReader(xmlText);
-                var serializer = new XmlSerializer(typeof(T));
-                return (T)serializer.Deserialize(stringReader);
+                var stringReader = new StringReader(xml);
+                var serializer = new XmlSerializer(typeof(List<T>));
+                return (IList<T>)serializer.Deserialize(stringReader);
             }
             catch
             {

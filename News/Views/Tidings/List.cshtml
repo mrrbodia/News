@@ -20,7 +20,12 @@
                 @item.PublishData
             </div>
         </div>
-        
+        if(item.AuthorId == User.Identity.Name)
+        {
+            <div id="update">
+                @Html.Partial("Update",item)
+            </div>
+        }
     }
     <div id="create">
         @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())

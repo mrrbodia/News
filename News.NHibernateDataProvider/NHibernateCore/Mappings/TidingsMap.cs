@@ -13,6 +13,8 @@ namespace News.NHibernateDataProvider.NHibernateCore.Mappings
 
             Map(x => x.Discription);
 
+            Map(x => x.AuthorId);
+
             Map(x => x.PublishData);
         }
     }

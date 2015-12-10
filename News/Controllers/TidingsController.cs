@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using News.Business.Components.Managers;
 using News.Business.ViewModels;
 using News.Business.Models;
+using News.Business.Components;
 
 namespace News.Controllers
 {
@@ -25,7 +26,9 @@ namespace News.Controllers
         public ActionResult List()
         {
             var news = tidingManager.GetList();
+
             var model = AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news);
+            var xml = tidingManager.Serialize(news);
             return View(model);
         }
 
@@ -40,23 +43,26 @@ namespace News.Controllers
         [Authorize(Roles = "Filler")]
         public ActionResult Create(TidingsViewModel tiding)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToRoute("Home");
+            }
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
             model.PublishData = DateTime.Now;
+            model.AuthorId = User.Identity.Name;
             tidingManager.Create(model);
-
-            tidingManager.Serialize<Tidings>(model);
             return RedirectToRoute("Home");
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Filler")]
         public ActionResult Update()
         {
             return PartialView();
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Filler")]
         public ActionResult Update(TidingsViewModel tiding)
         {
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
