@@ -1,0 +1,70 @@
+﻿@model List<News.Business.ViewModels.TidingsViewModel>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@if (User.IsInRole("Filler"))
+{
+    <div>ergreg</div>
+    foreach(var item in Model)
+    {
+        <div>
+            <div>
+                @item.Title
+            </div>
+            <div>
+                @item.Discription
+            </div>
+            <div>
+                @item.PublishData
+            </div>
+        </div>
+        
+    }
+    <div id="create">
+        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
+    </div>
+}
+else
+    if (User.IsInRole("Admin"))
+    {
+        foreach(var item in Model)
+        {
+            <div>
+                <div>
+                    @item.Title
+                </div>
+                <div>
+                    @item.Discription
+                </div>
+                <div>
+                    @item.PublishData
+                </div>
+            </div>
+            <div id="update">
+                @Html.Partial("Update",item)
+            </div>
+        
+        }
+        
+    }
+    else
+    {
+        foreach(var item in Model)
+        {
+            <div>
+                <div>
+                    @item.Title
+                </div>
+                <div>
+                    @item.Discription
+                </div>
+                <div>
+                    @item.PublishData
+                </div>
+            </div>
+        
+        }
+    }

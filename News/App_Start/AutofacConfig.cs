@@ -23,11 +23,16 @@ namespace News.App_Start
 
             builder.RegisterType<RoleManager>();
 
+            builder.RegisterType<TidingManager>();
+
             builder.RegisterType<NHibernateRoleDataProvider>()
                 .As<IRoleDataProvider>();
 
             builder.RegisterType<NHibernateUserDataProvider>()
                 .As<IUserDataProvider>();
+
+            builder.RegisterType<NHibernateTidingsDataProvider>()
+               .As<ITidingsDataProvider>();
 
             var container = builder.Build();
             //GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);

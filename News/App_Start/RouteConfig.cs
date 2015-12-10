@@ -28,7 +28,7 @@ namespace News
             routes.MapRoute(
              name: "Home",
              url: "",
-                defaults: new { controller = "Home", action = "Index" }
+                defaults: new { controller = "Tidings", action = "List" }
            );
 
             routes.MapRoute(

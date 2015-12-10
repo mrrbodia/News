@@ -25,7 +25,15 @@ namespace News.Controllers
         public ActionResult List()
         {
             var news = tidingManager.GetList();
-            return View(news);
+            var model = AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news);
+            return View(model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Filler")]
+        public ActionResult Create()
+        {
+            return PartialView();
         }
 
         [HttpPost]
@@ -34,6 +42,13 @@ namespace News.Controllers
         {
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
             tidingManager.Create(model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Update()
+        {
+            return PartialView();
         }
 
         [HttpPost]

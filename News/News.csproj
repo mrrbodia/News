@@ -242,6 +242,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\LogIn.cshtml" />
+    <Content Include="Views\Tidings\List.cshtml" />
+    <Content Include="Views\Tidings\Create.cshtml" />
+    <Content Include="Views\Tidings\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

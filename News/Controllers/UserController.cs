@@ -51,6 +51,10 @@ namespace News.Controllers
                 {
                     return RedirectToRoute("Home");//adminPage
                 }
+                if (User.IsInRole("Filler"))
+                {
+                    return RedirectToRoute("Home");
+                }
 
                 return RedirectToRoute("Home");
             }
@@ -67,12 +71,12 @@ namespace News.Controllers
         public void SetNewRole()
         {
             User admin = new User();
-            admin.Email = "Admin@gmail.com";
+            admin.Email = "Filler@gmail.com";
             admin.PasswordSalt = HashDecoder.GenarateSalt();
-            admin.Password = HashDecoder.ComputeHash("IAdmin", admin.PasswordSalt);
+            admin.Password = HashDecoder.ComputeHash("IFiller", admin.PasswordSalt);
 
             Role roleAdmin = new Role();
-            roleAdmin.Name = "Admin";
+            roleAdmin.Name = "Filler";
             roleManager.Create(roleAdmin);
 
             admin.Role = roleAdmin;
