@@ -38,10 +38,14 @@ namespace News.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Filler")]
-        public void Create(TidingsViewModel tiding)
+        public ActionResult Create(TidingsViewModel tiding)
         {
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
+            model.PublishData = DateTime.Now;
             tidingManager.Create(model);
+
+            tidingManager.Serialize<Tidings>(model);
+            return RedirectToRoute("Home");
         }
 
         [HttpGet]
@@ -53,10 +57,12 @@ namespace News.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public void Update(TidingsViewModel tiding)
+        public ActionResult Update(TidingsViewModel tiding)
         {
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
+            model.PublishData = DateTime.Now;
             tidingManager.Update(model);
+            return RedirectToRoute("Home");
         }
     }
 }

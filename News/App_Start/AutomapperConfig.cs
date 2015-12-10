@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using News.Business.Components.Managers;
 using News.Business.Models;
+using News.Business.ViewModels;
 
 namespace News.App_Start
 {
@@ -15,10 +16,17 @@ namespace News.App_Start
 
         private static void RegisterToViewModel()
         {
+            Mapper
+             .CreateMap<Tidings, TidingsViewModel>()
+             .IncludeBase<BaseModel, BaseViewModel>();
+
         }
 
         private static void RegisterFromViewModel()
         {
+            Mapper
+             .CreateMap<TidingsViewModel, Tidings>()
+             .IncludeBase<BaseViewModel, BaseModel>();
         }
     }
 }

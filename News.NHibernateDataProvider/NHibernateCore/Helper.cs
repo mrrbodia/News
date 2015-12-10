@@ -29,7 +29,7 @@ namespace News.NHibernateDataProvider.NHibernateCore
                           m.FluentMappings
                               .AddFromAssemblyOf<Helper>())
                 //.ExposeConfiguration(cfg => new SchemaExport(cfg)
-                  //                              .Create(true, true))
+                //                                .Create(true, true))
                               .BuildSessionFactory();
         }
     }
