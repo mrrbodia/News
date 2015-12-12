@@ -5,13 +5,44 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/materialize/css/materialize.min.css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
     <noscript><h3 class="error-massage">Увімкніть js</h3></noscript>
 
-    <header>
-        <nav style="width: 100%; height: 50px; margin: 0; background-color: whitesmoke">
+    <header id="header">
+        <div class="main-menu dark">
+	        <div class="row">
+		        <div class="grid_2">
+			        <a href="http://www.belancio.com" rel="tooltip" title="" data-placement="right" class="logo icon tip" data-original-title="Home">News</a>
+			        <a class="spring show-phone"></a>
+		        </div><!-- 2 -->
+		        <div class="grid_10 right hide-phone">
+			        <ul id="main-menu" class="menu-side">
+                         @if (User.Identity.IsAuthenticated)
+                        {
+                            <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                                @User.Identity.Name
+                            </li>
+                             <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                                @Html.RouteLink("Вийти", "LogOut", null)
+                            </li>
+                         }
+                        else
+                        {
+                        <li id="menu-item-311" class="menu-item menu-item-type-post_type_archive menu-item-object-design menu-item-311">
+                            @Html.RouteLink("Увійти", "logIn", null)
+                        </li>
+                        }
+                    </ul>
+
+		        </div><!-- 10 -->
+	        </div><!-- Row -->
+        </div>
+        <!--<nav style="width: 100%; height: 50px; margin: 0; background-color: whitesmoke">
             @if (User.Identity.IsAuthenticated)
             {
                 <div>
@@ -24,11 +55,13 @@
                 <div>@Html.RouteLink("Увійти", "logIn", null)</div>
             }
 
-        </nav>
+        </nav>-->
     </header>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/materialize/materialize.min.js")
+    @Scripts.Render("~/Scripts/News.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

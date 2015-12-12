@@ -19,28 +19,26 @@ namespace News.Controllers
             this.tidingManager = tidingManager;
         }
 
-        //
-        // GET: /Tidings/
-
         [HttpGet]
         public ActionResult List()
         {
             var news = tidingManager.GetList();
 
-            var model = AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news);
+            var model = AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news)
+                .OrderByDescending(x => x.PublishData).ToList();
             var xml = tidingManager.Serialize(news);
             return View(model);
         }
 
         [HttpGet]
-        [Authorize(Roles = "Filler")]
+        [Authorize(Roles = "Admin, Filler")]
         public ActionResult Create()
         {
             return PartialView();
         }
 
         [HttpPost]
-        [Authorize(Roles = "Filler")]
+        [Authorize(Roles = "Admin, Filler")]
         public ActionResult Create(TidingsViewModel tiding)
         {
             if (!ModelState.IsValid)
