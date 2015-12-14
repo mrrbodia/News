@@ -52,6 +52,9 @@ namespace News.Controllers
         [Authorize(Roles = "Admin, Filler")]
         public ActionResult Create(TidingsViewModel tiding)
         {
+            tiding.PublishData = DateTime.Now;
+            tiding.AuthorId = User.Identity.Name;
+
             if (User.Identity.Name != tiding.AuthorId && !User.IsInRole("Admin"))
             {
                 throw new HttpException(403, "Доступ заборонено");
@@ -61,8 +64,6 @@ namespace News.Controllers
                 return View(tiding);
             }
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
-            model.PublishData = DateTime.Now;
-            model.AuthorId = User.Identity.Name;
             tidingManager.Create(model);
             return RedirectToRoute("Home");
         }
@@ -71,6 +72,8 @@ namespace News.Controllers
         [Authorize(Roles = "Admin, Filler")]
         public ActionResult Update(TidingsViewModel tiding)
         {
+            tiding.PublishData = DateTime.Now;
+
             if (User.Identity.Name != tiding.AuthorId && !User.IsInRole("Admin"))
             {
                 throw new HttpException(403, "Доступ заборонено");
@@ -80,7 +83,6 @@ namespace News.Controllers
                 return View(tiding);
             }
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
-            model.PublishData = DateTime.Now;
             tidingManager.Update(model);
             return RedirectToRoute("Home");
         }
