@@ -39,29 +39,16 @@ namespace News.Business.Components
             return true;
         }
 
-        private IPrincipal WebUser
-        {
-            get
-            {
-                if (!IsPrincipalAvailable())
-                {
-                    return null;
-                }
-
-                return HttpContext.Current.User;
-            }
-        }
-
         public bool IsLogged(string role)
         {
-            return IsPrincipalAvailable() && WebUser.IsInRole(role);
+            return IsPrincipalAvailable() && HttpContext.Current.User.IsInRole(role);
         }
 
         public bool IsLoggedIn
         {
             get
             {
-                return IsPrincipalAvailable() && WebUser.Identity.IsAuthenticated;
+                return IsPrincipalAvailable() && HttpContext.Current.User.Identity.IsAuthenticated;
             }
         }
 
@@ -74,7 +61,8 @@ namespace News.Business.Components
                     return null;
                 }
 
-                return DependencyResolver.Current.GetService<UserManager>().GetByEmail(WebUser.Identity.Name);
+                return DependencyResolver.Current.GetService<UserManager>()
+                    .GetByEmail(HttpContext.Current.User.Identity.Name);
             }
         }
 
