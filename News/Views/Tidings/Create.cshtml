@@ -2,7 +2,6 @@
     @using (Html.BeginForm("Create", "Tidings", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-
         <div>
             @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control"} })
             @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })    

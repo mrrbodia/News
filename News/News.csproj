@@ -272,6 +272,7 @@
     <Content Include="Views\Tidings\List.cshtml" />
     <Content Include="Views\Tidings\Create.cshtml" />
     <Content Include="Views\Tidings\Update.cshtml" />
+    <Content Include="Views\Tidings\Xml.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -7,6 +7,8 @@ using News.Business.Components.Managers;
 using News.Business.ViewModels;
 using News.Business.Models;
 using News.Business.Components;
+using News.Business.Providers;
+using System.Text;
 
 namespace News.Controllers
 {
@@ -26,8 +28,17 @@ namespace News.Controllers
 
             var model = AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news)
                 .OrderByDescending(x => x.PublishData).ToList();
-            var xml = tidingManager.Serialize(news);
             return View(model);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Xml()
+        {
+            var news = tidingManager.GetList();
+            var xml = XmlProvider<Tidings>.Serialize(news);
+            var name = "news";
+            return File(Encoding.Default.GetBytes(xml), "text/xml", name + ".xml");;
         }
 
         [HttpGet]
@@ -41,9 +52,13 @@ namespace News.Controllers
         [Authorize(Roles = "Admin, Filler")]
         public ActionResult Create(TidingsViewModel tiding)
         {
+            if (User.Identity.Name != tiding.AuthorId && !User.IsInRole("Admin"))
+            {
+                throw new HttpException(403, "Доступ заборонено");
+            }
             if (!ModelState.IsValid)
             {
-                return RedirectToRoute("Home");
+                return View(tiding);
             }
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
             model.PublishData = DateTime.Now;
@@ -52,17 +67,18 @@ namespace News.Controllers
             return RedirectToRoute("Home");
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin, Filler")]
-        public ActionResult Update()
-        {
-            return PartialView();
-        }
-
         [HttpPost]
         [Authorize(Roles = "Admin, Filler")]
         public ActionResult Update(TidingsViewModel tiding)
         {
+            if (User.Identity.Name != tiding.AuthorId && !User.IsInRole("Admin"))
+            {
+                throw new HttpException(403, "Доступ заборонено");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(tiding);
+            }
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
             model.PublishData = DateTime.Now;
             tidingManager.Update(model);

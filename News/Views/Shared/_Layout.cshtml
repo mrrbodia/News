@@ -17,13 +17,19 @@
         <div class="main-menu dark">
 	        <div class="row">
 		        <div class="grid_2">
-			        <a href="http://www.belancio.com" rel="tooltip" title="" data-placement="right" class="logo icon tip" data-original-title="Home">News</a>
+			        <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class="logo icon tip" data-original-title="Home">News</a>
 			        <a class="spring show-phone"></a>
 		        </div><!-- 2 -->
 		        <div class="grid_10 right hide-phone">
 			        <ul id="main-menu" class="menu-side">
                          @if (User.Identity.IsAuthenticated)
                         {
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                                    <a href="@Url.RouteUrl("ShowXml")">XML</a>
+                                </li>
+                            }
                             <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
                                 @User.Identity.Name
                             </li>
@@ -42,20 +48,6 @@
 		        </div><!-- 10 -->
 	        </div><!-- Row -->
         </div>
-        <!--<nav style="width: 100%; height: 50px; margin: 0; background-color: whitesmoke">
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div>
-                    @User.Identity.Name
-                </div>
-                <div>@Html.RouteLink("Вийти", "LogOut", null)</div>
-            }
-            else
-            {
-                <div>@Html.RouteLink("Увійти", "logIn", null)</div>
-            }
-
-        </nav>-->
     </header>
     @RenderBody()
 

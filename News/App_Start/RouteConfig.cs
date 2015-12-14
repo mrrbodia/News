@@ -26,6 +26,12 @@ namespace News
            );
 
             routes.MapRoute(
+             name: "ShowXml",
+             url: "xml/{id}",
+                defaults: new { controller = "Tidings", action = "Xml", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
              name: "Home",
              url: "",
                 defaults: new { controller = "Tidings", action = "List" }
