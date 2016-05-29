@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataProviders\NHibernateCommentDataProvider.cs" />
     <Compile Include="DataProviders\NHibernateDataProviderBase.cs" />
     <Compile Include="DataProviders\NHibernateTidingsDataProvider.cs" />
     <Compile Include="DataProviders\NHibernateRoleDataProvider.cs" />

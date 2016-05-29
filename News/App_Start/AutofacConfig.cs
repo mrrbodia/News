@@ -25,6 +25,8 @@ namespace News.App_Start
 
             builder.RegisterType<TidingManager>();
 
+            builder.RegisterType<CommentManager>();
+
             builder.RegisterType<NHibernateRoleDataProvider>()
                 .As<IRoleDataProvider>();
 
@@ -33,6 +35,9 @@ namespace News.App_Start
 
             builder.RegisterType<NHibernateTidingsDataProvider>()
                .As<ITidingsDataProvider>();
+
+            builder.RegisterType<NHibernateCommentDataProvider>()
+               .As<ICommentDataProvider>();
 
             var container = builder.Build();
             //GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);

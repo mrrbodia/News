@@ -20,6 +20,10 @@ namespace News.App_Start
              .CreateMap<Tidings, TidingsViewModel>()
              .IncludeBase<BaseModel, BaseViewModel>();
 
+            Mapper
+             .CreateMap<Comment, CommentViewModel>()
+             .IncludeBase<BaseModel, BaseViewModel>();
+
         }
 
         private static void RegisterFromViewModel()
@@ -28,6 +32,10 @@ namespace News.App_Start
              .CreateMap<TidingsViewModel, Tidings>()
              .IncludeBase<BaseViewModel, BaseModel>();
              //.ForMember(s => s.AuthorId, otp => otp.Ignore());
+
+            Mapper
+             .CreateMap<CommentViewModel, Comment>()
+             .IncludeBase<BaseViewModel, BaseModel>();
         }
     }
 }
