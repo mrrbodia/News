@@ -38,7 +38,7 @@ namespace News.Controllers
             var news = tidingManager.GetList();
             var xml = XmlProvider<Tidings>.Serialize(news);
             var name = "news";
-            return File(Encoding.Default.GetBytes(xml), "text/xml", name + ".xml");;
+            return File(Encoding.Default.GetBytes(xml), "text/xml", name + ".xml");
         }
 
         [HttpGet]
@@ -85,6 +85,13 @@ namespace News.Controllers
             var model = AutoMapper.Mapper.Map<Tidings>(tiding);
             tidingManager.Update(model);
             return RedirectToRoute("Home");
+        }
+
+        [HttpGet]
+        public ActionResult Tiding(string id)
+        {
+            var model = AutoMapper.Mapper.Map<TidingsViewModel>(tidingManager.Get(id));
+            return View(model);
         }
     }
 }

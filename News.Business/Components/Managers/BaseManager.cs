@@ -40,5 +40,10 @@ namespace News.Business.Components.Managers
         {
             return provider.GetList();
         }
+
+        public virtual T Get(string id)
+        {
+            return provider.Get(id);
+        }
     }
 }

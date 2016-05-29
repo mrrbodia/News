@@ -157,6 +157,7 @@
     <Content Include="App_Data\NewsData_log.ldf">
       <DependentUpon>NewsData.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\icon.png" />
     <Content Include="Content\materialize\css\materialize.css" />
     <Content Include="Content\materialize\css\materialize.min.css" />
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
@@ -273,6 +274,7 @@
     <Content Include="Views\Tidings\Create.cshtml" />
     <Content Include="Views\Tidings\Update.cshtml" />
     <Content Include="Views\Tidings\Xml.cshtml" />
+    <Content Include="Views\Tidings\Tiding.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

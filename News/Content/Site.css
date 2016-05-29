@@ -74,10 +74,18 @@ div.event_holder {
     transition: all .25s ease-in;
 }
 
+    div.event_holder :active {
+        -webkit-transition-duration: 0.5s; 
+        -o-transition-duration: 0.5s; 
+        -moz-transition-duration: 0.5s; 
+        transition-duration: 0.5s;
+        background-color: white;
+    }
+
 div.event_wrapper {
     width: 100%;
-    max-width: 960px;
-    min-width: 755px;
+    max-width: 720px;
+    min-width: 400px;
     margin: 0 auto;
     padding: 0;
 }
@@ -159,21 +167,31 @@ time.icon *
 #header .main-menu {
     width: 100%;
     z-index: 10;
-    padding: 10px 0 0 0;
+    height: 100%;
 }
 
 .row {
     margin: 0 auto;
     width: 960px;
     display: flex;
+    height: 100%;
+    margin-bottom: 0px !important;
+    display: block;
 }
 
 .grid_2 {
-    width: 160px;
     margin: 0 20px 0 20px;
     float: left;
     display: inline;
 }
+
+.grid_btn {
+    padding: 10px;
+}
+
+    .grid_btn:hover {
+        background-color: #4d4d4d;
+    }
 
 .grid_10 {
     width: 960px;
@@ -185,7 +203,7 @@ time.icon *
 #header .logo {
     font-family: BrandonGrotesqueBoldRegular, Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    color: #444;
+    color: snow;
     letter-spacing: 2px;
     font-size: 16px;
     display: inline-block;
@@ -208,6 +226,7 @@ time.icon *
     padding: 0;
     display: inline-block;
     position: relative;
+    color: snow;
 }
 
 #header .main-menu .menu-side li a {
@@ -218,11 +237,27 @@ time.icon *
 .menu-side li a {
     font-family: BrandonGrotesqueRegularRg, Helvetica, Arial, sans-serif;
     display: block;
-    color: #999;
+    color: snow;
 }
 
 #header {
     height: 45px;
+    background-color: #3d3d3e;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background: rgba(61,61,62,1);
+background: -moz-linear-gradient(top, rgba(61,61,62,1) 15%, rgba(61,61,62,1) 16%, rgba(61,61,62,0.9) 60%, rgba(61,61,62,0.9) 90%, rgba(61,61,62,0.9) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(15%, rgba(61,61,62,1)), color-stop(16%, rgba(61,61,62,1)), color-stop(60%, rgba(61,61,62,0.9)), color-stop(90%, rgba(61,61,62,0.9)), color-stop(100%, rgba(61,61,62,0.9)));
+background: -webkit-linear-gradient(top, rgba(61,61,62,1) 15%, rgba(61,61,62,1) 16%, rgba(61,61,62,0.9) 60%, rgba(61,61,62,0.9) 90%, rgba(61,61,62,0.9) 100%);
+background: -o-linear-gradient(top, rgba(61,61,62,1) 15%, rgba(61,61,62,1) 16%, rgba(61,61,62,0.9) 60%, rgba(61,61,62,0.9) 90%, rgba(61,61,62,0.9) 100%);
+background: -ms-linear-gradient(top, rgba(61,61,62,1) 15%, rgba(61,61,62,1) 16%, rgba(61,61,62,0.9) 60%, rgba(61,61,62,0.9) 90%, rgba(61,61,62,0.9) 100%);
+background: linear-gradient(to bottom, rgba(61,61,62,1) 15%, rgba(61,61,62,1) 16%, rgba(61,61,62,0.9) 60%, rgba(61,61,62,0.9) 90%, rgba(61,61,62,0.9) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d3e', endColorstr='#3d3d3e', GradientType=0 );
+}
+
+#content {
+    padding-top: 44px;
 }
 
 #LoginForm {
@@ -268,4 +303,38 @@ i.small {
     float: right;
     margin-bottom: 15px;
     width: 140px;
+}
+
+.embed-nav a.active {
+    background: #cccccc;
+    color: #000000;
+}
+
+.embed-nav a {
+    text-decoration: none;
+    color: #76daff;
+    display: inline-block;
+    position: relative;
+    padding: 8px 16px 8px;
+}
+
+.embed-nav a.active:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-top: 8px solid #ccc;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    margin-left: -8px;
+}
+
+.icon {
+    width: 52px;
+    display: block;
+}
+
+.icon-tab {
+    background-color: #3d3d3e;
+    border-bottom-left-radius: 25px;
 }

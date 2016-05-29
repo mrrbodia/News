@@ -16,11 +16,14 @@
     <header id="header">
         <div class="main-menu dark">
 	        <div class="row">
-		        <div class="grid_2">
-			        <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class="logo icon tip" data-original-title="Home">News</a>
+		        <div class="grid_2 grid_btn icon-tab">
+			        <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class="logo icon tip" data-original-title="Home">
+                        <img class="icon" src="~/Content/images/icon.png" />
+                        News
+			        </a>
 			        <a class="spring show-phone"></a>
 		        </div><!-- 2 -->
-		        <div class="grid_10 right hide-phone">
+		        <div class="grid_2 right hide-phone grid_btn">
 			        <ul id="main-menu" class="menu-side">
                          @if (User.Identity.IsAuthenticated)
                         {
@@ -49,7 +52,9 @@
 	        </div><!-- Row -->
         </div>
     </header>
-    @RenderBody()
+    <div id="content">
+        @RenderBody()
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/materialize/materialize.min.js")

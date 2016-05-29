@@ -15,5 +15,7 @@ namespace News.Business.IDataProviders
         void Delete(string id);
 
         IList<T> GetList();
+
+        T Get(string id);
     }
 }

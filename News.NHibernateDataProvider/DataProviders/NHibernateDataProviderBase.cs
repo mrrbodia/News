@@ -41,6 +41,17 @@ namespace News.NHibernateDataProvider.DataProviders
             }
         }
 
+        public virtual TEntity Get(string id)
+        {
+            return Execute(session =>
+            {
+                using (var translation = session.BeginTransaction())
+                {
+                    return session.Get<TEntity>(id);
+                }
+            });
+        }
+
         public virtual void Create(TEntity model)
         {
             Execute(session =>

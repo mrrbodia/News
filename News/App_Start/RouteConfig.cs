@@ -32,6 +32,12 @@ namespace News
            );
 
             routes.MapRoute(
+             name: "Tiding",
+             url: "tiding/{id}",
+                defaults: new { controller = "Tidings", action = "Tiding", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
              name: "Home",
              url: "",
                 defaults: new { controller = "Tidings", action = "List" }

@@ -1,0 +1,121 @@
+﻿@model News.Business.ViewModels.TidingsViewModel
+@if (User.IsInRole("Filler"))
+{
+    <div class="content">
+        @{
+            var item = Model;
+            <div class="event_holder">
+                <div class="event_wrapper">
+                    <span class="entry_date">
+                        <time datetime="@item.PublishData" class="icon">
+                            <em>@item.PublishData.DayOfWeek</em>
+                            <strong>@item.PublishData.ToString("MMMM")</strong>
+                            <span>@item.PublishData.Day</span>
+                        </time>
+	                </span>	
+			        @if(item.AuthorId == User.Identity.Name)
+                    {
+                        <i class="small material-icons updateNews">assignment</i>
+                    }
+		            <h1>@item.Title</h1>
+                    <div class="category_links">
+			            <div class="category location">
+                            <div>@item.Discription</div>
+                        </div>			
+                    </div>
+                </div>
+                    @if(item.AuthorId == User.Identity.Name)
+                {
+                    <div class="update">
+                        <div class="event_wrapper">
+                            <h1>Редагувати</h1>
+                            <div class="category_links">
+			                    <div class="category location">
+                                @Html.Partial("Update",item)
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        }
+    </div>
+    <div id="create">
+        <div class="create-content">
+        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
+
+        </div>
+    </div>
+}
+else
+    if (User.IsInRole("Admin"))
+    {
+        <div class="content">
+        @{
+            var item = Model;
+            <div class="event_holder">
+                <div class="event_wrapper">
+                    <span class="entry_date">
+                        <time datetime="@item.PublishData" class="icon">
+                            <em>@item.PublishData.DayOfWeek</em>
+                            <strong>@item.PublishData.ToString("MMMM")</strong>
+                            <span>@item.PublishData.Day</span>
+                        </time>
+	                </span>	
+			        <i class="small material-icons updateNews">assignment</i>
+		            <h1>@item.Title</h1>
+                    <div class="category_links">
+			            <div class="category location">
+                            <div>@item.Discription</div>
+                        </div>			
+                    </div>
+                </div>
+                    <div class="update">
+                        <div class="event_wrapper">
+                            <h1>Редагувати</h1>
+                            <div class="category_links">
+			                    <div class="category location">
+                                @Html.Partial("Update",item)
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+        }
+    </div>
+    <div id="create">
+        <div class="create-content">
+        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
+
+        </div>
+    </div>
+        
+    }
+    else
+    {
+            var item = Model;
+            <div class="event_holder 2012" id="event_2378">
+                <div class="event_wrapper">
+                    <span class="entry_date">
+                        <time datetime="@item.PublishData" class="icon">
+                          <em>@item.PublishData.DayOfWeek</em>
+                          <strong>@item.PublishData.ToString("MMMM")</strong>
+                          <span>@item.PublishData.Day</span>
+                        </time>
+	                </span>	
+				
+		                    <h1>@item.Title</h1>
+			
+                    <div class="category_links">
+			        <div class="category location">
+                            <div>@item.Discription</div>
+                    </div>			
+                    </div>
+                </div>
+            </div>
+    }
+<pre>
+    @ViewBag.xml
+</xmp>
