@@ -1,4 +1,5 @@
 ﻿@model News.Business.ViewModels.TidingsViewModel
+@using News.Business.ViewModels
 @if (User.IsInRole("Filler"))
 {
     <div class="content">
@@ -41,12 +42,6 @@
 
         }
     </div>
-    <div id="create">
-        <div class="create-content">
-        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
-
-        </div>
-    </div>
 }
 else
     if (User.IsInRole("Admin"))
@@ -85,12 +80,6 @@ else
 
         }
     </div>
-    <div id="create">
-        <div class="create-content">
-        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
-
-        </div>
-    </div>
         
     }
     else
@@ -116,6 +105,7 @@ else
                 </div>
             </div>
     }
+@Html.Partial("~/Views/Comment/Create.cshtml", new CommentViewModel(Model.Id))
 <pre>
     @ViewBag.xml
 </xmp>

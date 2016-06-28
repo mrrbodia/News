@@ -29,13 +29,14 @@ namespace News.Controllers
             }
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                var user = AutoMapper.Mapper.Map<UserViewModel>(userManager.GetByEmail(User.Identity.Name));
+                var user = userManager.GetByEmail(User.Identity.Name);
                 commentModel.AuthorId = user.Id;
                 commentModel.AuthorName = user.Email;
+                commentModel.PostingTime = DateTime.Now;
+                var comment = AutoMapper.Mapper.Map<Comment>(commentModel);
+                commentManager.Create(comment);
             }
-            var comment = AutoMapper.Mapper.Map<Comment>(commentModel);
-            commentManager.Create(comment);
-            return RedirectToRoute("eventDetails", new { id = commentModel.TidingId });
+            return RedirectToRoute("Tiding", new { id = commentModel.TidingId });
         }
     }
 }

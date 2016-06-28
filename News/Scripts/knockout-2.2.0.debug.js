@@ -20,13 +20,13 @@ var DEBUG=true;
     }
 }(function(koExports){
 // Internally, all KO objects are attached to koExports (even the non-exported ones whose names will be minified by the closure compiler).
-// In the future, the following "ko" variable may be made distinct from "koExports" so that private objects are not externally reachable.
+// In the future, the following "ko" variable Òðàâåíü be made distinct from "koExports" so that private objects are not externally reachable.
 var ko = typeof koExports !== 'undefined' ? koExports : {};
 // Google Closure Compiler helpers (used only to make the minified file smaller)
 ko.exportSymbol = function(koPath, object) {
 	var tokens = koPath.split(".");
 
-	// In the future, "ko" may become distinct from "koExports" (so that non-exported objects are not reachable)
+	// In the future, "ko" Òðàâåíü become distinct from "koExports" (so that non-exported objects are not reachable)
 	// At that point, "target" would be set to: (typeof koExports !== "undefined" ? koExports : ko)
 	var target = ko;
 
@@ -589,7 +589,7 @@ ko.utils.domNodeDisposal = new (function () {
         // Run all the dispose callbacks
         var callbacks = getDisposeCallbacksCollection(node, false);
         if (callbacks) {
-            callbacks = callbacks.slice(0); // Clone, as the array may be modified during iteration (typically, callbacks will remove themselves)
+            callbacks = callbacks.slice(0); // Clone, as the array Òðàâåíü be modified during iteration (typically, callbacks will remove themselves)
             for (var i = 0; i < callbacks.length; i++)
                 callbacks[i](node);
         }
@@ -1139,7 +1139,7 @@ ko.observableArray['fn'] = {
 }
 
 // Populate ko.observableArray.fn with read/write functions from native arrays
-// Important: Do not add any additional functions here that may reasonably be used to *read* data from the array
+// Important: Do not add any additional functions here that Òðàâåíü reasonably be used to *read* data from the array
 // because we'll eval them without causing subscriptions, so ko.computed output could end up getting stale
 ko.utils.arrayForEach(["pop", "push", "reverse", "shift", "sort", "splice", "unshift"], function (methodName) {
     ko.observableArray['fn'][methodName] = function () {
@@ -1508,7 +1508,7 @@ ko.expressionRewriting = (function () {
 
     function restoreTokens(string, tokens) {
         var prevValue = null;
-        while (string != prevValue) { // Keep restoring tokens until it no longer makes a difference (they may be nested)
+        while (string != prevValue) { // Keep restoring tokens until it no longer makes a difference (they Òðàâåíü be nested)
             prevValue = string;
             string = string.replace(restoreCapturedTokensRegex, function (match, tokenIndex) {
                 return tokens[tokenIndex];
@@ -1698,7 +1698,7 @@ ko.exportSymbol('expressionRewriting.preProcessBindings', ko.expressionRewriting
 ko.exportSymbol('jsonExpressionRewriting', ko.expressionRewriting);
 ko.exportSymbol('jsonExpressionRewriting.insertPropertyAccessorsIntoJson', ko.expressionRewriting.preProcessBindings);(function() {
     // "Virtual elements" is an abstraction on top of the usual DOM API which understands the notion that comment nodes
-    // may be used to represent hierarchy (in addition to the DOM's natural hierarchy).
+    // Òðàâåíü be used to represent hierarchy (in addition to the DOM's natural hierarchy).
     // If you call the DOM-manipulating functions on ko.virtualElements, you will be able to read and write the state
     // of that virtual hierarchy
     //
@@ -1987,43 +1987,43 @@ ko.exportSymbol('bindingProvider', ko.bindingProvider);
             throw new Error("The binding '" + bindingName + "' cannot be used with virtual elements")
     }
 
-    function applyBindingsToDescendantsInternal (viewModel, elementOrVirtualElement, bindingContextsMayDifferFromDomParentElement) {
+    function applyBindingsToDescendantsInternal (viewModel, elementOrVirtualElement, bindingContextsÒðàâåíüDifferFromDomParentElement) {
         var currentChild, nextInQueue = ko.virtualElements.firstChild(elementOrVirtualElement);
         while (currentChild = nextInQueue) {
             // Keep a record of the next child *before* applying bindings, in case the binding removes the current child from its position
             nextInQueue = ko.virtualElements.nextSibling(currentChild);
-            applyBindingsToNodeAndDescendantsInternal(viewModel, currentChild, bindingContextsMayDifferFromDomParentElement);
+            applyBindingsToNodeAndDescendantsInternal(viewModel, currentChild, bindingContextsÒðàâåíüDifferFromDomParentElement);
         }
     }
 
-    function applyBindingsToNodeAndDescendantsInternal (viewModel, nodeVerified, bindingContextMayDifferFromDomParentElement) {
+    function applyBindingsToNodeAndDescendantsInternal (viewModel, nodeVerified, bindingContextÒðàâåíüDifferFromDomParentElement) {
         var shouldBindDescendants = true;
 
         // Perf optimisation: Apply bindings only if...
-        // (1) We need to store the binding context on this node (because it may differ from the DOM parent node's binding context)
+        // (1) We need to store the binding context on this node (because it Òðàâåíü differ from the DOM parent node's binding context)
         //     Note that we can't store binding contexts on non-elements (e.g., text nodes), as IE doesn't allow expando properties for those
         // (2) It might have bindings (e.g., it has a data-bind attribute, or it's a marker for a containerless template)
         var isElement = (nodeVerified.nodeType === 1);
         if (isElement) // Workaround IE <= 8 HTML parsing weirdness
             ko.virtualElements.normaliseVirtualElementDomStructure(nodeVerified);
 
-        var shouldApplyBindings = (isElement && bindingContextMayDifferFromDomParentElement)             // Case (1)
+        var shouldApplyBindings = (isElement && bindingContextÒðàâåíüDifferFromDomParentElement)             // Case (1)
                                || ko.bindingProvider['instance']['nodeHasBindings'](nodeVerified);       // Case (2)
         if (shouldApplyBindings)
-            shouldBindDescendants = applyBindingsToNodeInternal(nodeVerified, null, viewModel, bindingContextMayDifferFromDomParentElement).shouldBindDescendants;
+            shouldBindDescendants = applyBindingsToNodeInternal(nodeVerified, null, viewModel, bindingContextÒðàâåíüDifferFromDomParentElement).shouldBindDescendants;
 
         if (shouldBindDescendants) {
             // We're recursing automatically into (real or virtual) child nodes without changing binding contexts. So,
             //  * For children of a *real* element, the binding context is certainly the same as on their DOM .parentNode,
-            //    hence bindingContextsMayDifferFromDomParentElement is false
-            //  * For children of a *virtual* element, we can't be sure. Evaluating .parentNode on those children may
+            //    hence bindingContextsÒðàâåíüDifferFromDomParentElement is false
+            //  * For children of a *virtual* element, we can't be sure. Evaluating .parentNode on those children Òðàâåíü
             //    skip over any number of intermediate virtual elements, any of which might define a custom binding context,
-            //    hence bindingContextsMayDifferFromDomParentElement is true
-            applyBindingsToDescendantsInternal(viewModel, nodeVerified, /* bindingContextsMayDifferFromDomParentElement: */ !isElement);
+            //    hence bindingContextsÒðàâåíüDifferFromDomParentElement is true
+            applyBindingsToDescendantsInternal(viewModel, nodeVerified, /* bindingContextsÒðàâåíüDifferFromDomParentElement: */ !isElement);
         }
     }
 
-    function applyBindingsToNodeInternal (node, bindings, viewModelOrBindingContext, bindingContextMayDifferFromDomParentElement) {
+    function applyBindingsToNodeInternal (node, bindings, viewModelOrBindingContext, bindingContextÒðàâåíüDifferFromDomParentElement) {
         // Need to be sure that inits are only run once, and updates never run until all the inits have been run
         var initPhase = 0; // 0 = before all inits, 1 = during inits, 2 = after all inits
 
@@ -2053,7 +2053,7 @@ ko.exportSymbol('bindingProvider', ko.bindingProvider);
                 // Optimization: Don't store the binding context on this node if it's definitely the same as on node.parentNode, because
                 // we can easily recover it just by scanning up the node's ancestors in the DOM
                 // (note: here, parent node means "real DOM parent" not "virtual parent", as there's no O(1) way to find the virtual parent)
-                if (bindingContextMayDifferFromDomParentElement)
+                if (bindingContextÒðàâåíüDifferFromDomParentElement)
                     ko.storedBindingContextForNode(node, bindingContextInstance);
 
                 // Use evaluatedBindings if given, otherwise fall back on asking the bindings provider to give us some bindings
@@ -3286,8 +3286,8 @@ ko.exportSymbol('utils.compareArrays', ko.utils.compareArrays);
 
     function fixUpNodesToBeMovedOrRemoved(contiguousNodeArray) {
         // Before moving, deleting, or replacing a set of nodes that were previously outputted by the "map" function, we have to reconcile
-        // them against what is in the DOM right now. It may be that some of the nodes have already been removed from the document,
-        // or that new nodes might have been inserted in the middle, for example by a binding. Also, there may previously have been
+        // them against what is in the DOM right now. It Òðàâåíü be that some of the nodes have already been removed from the document,
+        // or that new nodes might have been inserted in the middle, for example by a binding. Also, there Òðàâåíü previously have been
         // leading comment nodes (created by rewritten string-based templates) that have since been removed during binding.
         // So, this function translates the old "map" output array into its best guess of what set of current DOM nodes should be removed.
         //

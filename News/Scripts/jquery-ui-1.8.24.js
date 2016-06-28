@@ -569,7 +569,7 @@ $.Widget.prototype = {
 		event.type = ( type === this.widgetEventPrefix ?
 			type :
 			this.widgetEventPrefix + type ).toLowerCase();
-		// the original event may come from any element
+		// the original event Травень come from any element
 		// so we need to reset the target on the new event
 		event.target = this.element[ 0 ];
 
@@ -639,7 +639,7 @@ $.widget("ui.mouse", {
 		// don't let more than one widget handle mouseStart
 		if( mouseHandled ) { return };
 
-		// we may have missed mouseup (out of window)
+		// we Травень have missed mouseup (out of window)
 		(this._mouseStarted && this._mouseUp(event));
 
 		this._mouseDownEvent = event;
@@ -668,7 +668,7 @@ $.widget("ui.mouse", {
 			}
 		}
 
-		// Click event may never have fired (Gecko & Opera)
+		// Click event Травень never have fired (Gecko & Opera)
 		if (true === $.data(event.target, this.widgetName + '.preventClickEvent')) {
 			$.removeData(event.target, this.widgetName + '.preventClickEvent');
 		}
@@ -6928,12 +6928,12 @@ function Datepicker() {
 		prevText: 'Prev', // Display text for previous month link
 		nextText: 'Next', // Display text for next month link
 		currentText: 'Today', // Display text for current month link
-		monthNames: ['January','February','March','April','May','June',
-			'July','August','September','October','November','December'], // Names of months for drop-down and formatting
-		monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // For formatting
+		monthNames: ['Cічень','Лютий','Березень','Квітень','Травень','Червень',
+			'Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'], // Names of months for drop-down and formatting
+		monthNamesShort: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'], // For formatting
 		dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], // For formatting
-		dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // For formatting
-		dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'], // Column headings for days starting at Sunday
+		dayNamesShort: ['Нед', 'Пон', 'Вів', 'Сер', 'Чет', 'Пят', 'Суб'], // For formatting
+		dayNamesMin: ['Нед', 'Пон', 'Вів', 'Сер', 'Чет', 'Пят', 'Суб'], // Column headings for days starting at Sunday
 		weekHeader: 'Wk', // Column header for week of the year
 		dateFormat: 'mm/dd/yy', // See format options on parseDate
 		firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
@@ -8196,7 +8196,7 @@ $.extend(Datepicker.prototype, {
 			this._determineDate(inst, this._get(inst, 'defaultDate'), new Date()));
 	},
 
-	/* A date may be specified as an exact value or a relative one. */
+	/* A date Травень be specified as an exact value or a relative one. */
 	_determineDate: function(inst, date, defaultDate) {
 		var offsetNumeric = function(offset) {
 			var date = new Date();
@@ -8250,7 +8250,7 @@ $.extend(Datepicker.prototype, {
 	},
 
 	/* Handle switch to/from daylight saving.
-	   Hours may be non-zero on daylight saving cut-over:
+	   Hours Травень be non-zero on daylight saving cut-over:
 	   > 12 when midnight changeover, but then cannot generate
 	   midnight datetime, so jump to 1AM, otherwise reset.
 	   @param  date  (Date) the date to check
@@ -10688,7 +10688,7 @@ $.widget( "ui.tabs", {
 	},
 
 	_sanitizeSelector: function( hash ) {
-		// we need this because an id may contain a ":"
+		// we need this because an id Травень contain a ":"
 		return hash.replace( /:/g, "\\:" );
 	},
 
@@ -10874,7 +10874,7 @@ $.widget( "ui.tabs", {
 			this.anchors.removeData( "cache.tabs" );
 		}
 
-		// remove all handlers before, tabify may run on existing tabs after add or option change
+		// remove all handlers before, tabify Травень run on existing tabs after add or option change
 		this.lis.add( this.anchors ).unbind( ".tabs" );
 
 		if ( o.event !== "mouseover" ) {
@@ -10976,7 +10976,7 @@ $.widget( "ui.tabs", {
 
 			self.abort();
 
-			// if tab may be closed
+			// if tab Травень be closed
 			if ( o.collapsible ) {
 				if ( $li.hasClass( "ui-tabs-selected" ) ) {
 					o.selected = -1;

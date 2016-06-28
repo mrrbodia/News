@@ -13,14 +13,45 @@
 <body>
     <noscript><h3 class="error-massage">Увімкніть js</h3></noscript>
 
-    <header id="header">
+
+    <nav class="grey darken-3">
+        <div class="nav-wrapper">
+            <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class=" brand-logo" data-original-title="Home">
+                <img id="globe" src="~/Content/images/icon.png" />
+              <span id="logo">Breaking news</span>              
+            </a>
+            <ul class="right hide-on-med-and-down">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                            <a href="@Url.RouteUrl("ShowXml")"><i class="large material-icons">print</i></a>
+                        </li>
+                    }
+                    <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                        Вітаємо, @User.Identity.Name
+                    </li>
+                    <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                       <a href="@Url.RouteUrl("LogOut")"><i class="large material-icons">power_settings_new</i></a>
+                    </li>
+                }
+                else
+                {
+                    <li id="menu-item-311" class="menu-item menu-item-type-post_type_archive menu-item-object-design menu-item-311">
+                        @Html.RouteLink("Увійти", "logIn", null)
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+
+
+    @*<header id="header">
         <div class="main-menu dark">
 	        <div class="row">
 		        <div class="grid_2 grid_btn icon-tab">
-			        <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class="logo icon tip" data-original-title="Home">
-                        <img class="icon" src="~/Content/images/icon.png" />
-                        News
-			        </a>
+			        
 			        <a class="spring show-phone"></a>
 		        </div><!-- 2 -->
 		        <div class="grid_2 right hide-phone grid_btn">
@@ -51,7 +82,7 @@
 		        </div><!-- 10 -->
 	        </div><!-- Row -->
         </div>
-    </header>
+    </header>*@
     <div id="content">
         @RenderBody()
     </div>

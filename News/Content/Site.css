@@ -256,10 +256,6 @@ background: linear-gradient(to bottom, rgba(61,61,62,1) 15%, rgba(61,61,62,1) 16
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d3e', endColorstr='#3d3d3e', GradientType=0 );
 }
 
-#content {
-    padding-top: 44px;
-}
-
 #LoginForm {
     width: 300px;
     margin: 0 auto;
@@ -338,3 +334,16 @@ i.small {
     background-color: #3d3d3e;
     border-bottom-left-radius: 25px;
 }
+#globe {
+   width: 12%;
+}
+#logo {
+    position: absolute;
+    top: -3%;
+    left: 14%;
+}
+#donwload-icon {
+    font-size: 50px;
+}
+li#menu-item-309 {
+    font-size: 20px;}

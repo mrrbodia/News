@@ -2,16 +2,16 @@
 @{
     ViewBag.Title = "List";
 }
-
 @if (User.IsInRole("Filler"))
 {
     <div class="content">
         @foreach(var item in Model)
         {
+            var url = "/tiding/" + item.Id;
             <div class="event_holder">
                 <div class="event_wrapper">
                     <span class="entry_date">
-                        <time datetime="@item.PublishData" class="icon">
+                        <time s class="icon">
                             <em>@item.PublishData.DayOfWeek</em>
                             <strong>@item.PublishData.ToString("MMMM")</strong>
                             <span>@item.PublishData.Day</span>
@@ -21,7 +21,9 @@
                     {
                         <i class="small material-icons updateNews">assignment</i>
                     }
-		            <h1>@item.Title</h1>
+		            <a href="@url">
+                        <h1>@item.Title</h1>
+		            </a>
                     <div class="category_links">
 			            <div class="category location">
                             <div>@item.Discription</div>
@@ -58,6 +60,7 @@ else
         <div class="content">
         @foreach(var item in Model)
         {
+            var url = "/tiding/" + item.Id;
             <div class="event_holder">
                 <div class="event_wrapper">
                     <span class="entry_date">
@@ -68,7 +71,9 @@ else
                         </time>
 	                </span>	
 			        <i class="small material-icons updateNews">assignment</i>
-		            <h1>@item.Title</h1>
+		            <<a href="@url">
+                        <h1>@item.Title</h1>
+		            </a>
                     <div class="category_links">
 			            <div class="category location">
                             <div>@item.Discription</div>
@@ -101,6 +106,7 @@ else
     {
         foreach(var item in Model)
         {
+            var url = "/tiding/" + item.Id;
             <div class="event_holder 2012" id="event_2378">
                 <div class="event_wrapper">
                     <span class="entry_date">
@@ -111,7 +117,9 @@ else
                         </time>
 	                </span>	
 				
-		                    <h1>@item.Title</h1>
+		            <a href="@url">
+                        <h1>@item.Title</h1>
+		            </a>
 			
                     <div class="category_links">
 			        <div class="category location">

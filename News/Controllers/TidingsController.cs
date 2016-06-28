@@ -93,5 +93,22 @@ namespace News.Controllers
             var model = AutoMapper.Mapper.Map<TidingsViewModel>(tidingManager.Get(id));
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult Search()
+        {
+            var news = tidingManager.GetList().OrderByDescending(x => x.PublishData).ToList();
+            tidingManager.AddLuceneIndex(news);
+
+            return View(AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news));
+        }
+
+        [HttpPost]
+        [ValidateInput(true)]
+        public JsonResult SearchForNews(string key)
+        {
+            var list = tidingManager.Search(key);
+            return Json(list);
+        }
     }
 }

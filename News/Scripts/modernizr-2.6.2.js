@@ -427,7 +427,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // webk.it/70117 is tracking a legit WebGL feature detect proposal
 
-    // We do a soft detect which may false positive in order to avoid
+    // We do a soft detect which Травень false positive in order to avoid
     // an expensive context creation: bugzil.la/732441
 
     tests['webgl'] = function() {
@@ -1310,7 +1310,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // Modernizr.mq tests a given media query, live against the current state of the window
     // A few important notes:
     //   * If a browser does not support media queries at all (eg. oldIE) the mq() will always return false
-    //   * A max-width or orientation query will be evaluated against the current state, which may change later.
+    //   * A max-width or orientation query will be evaluated against the current state, which Травень change later.
     //   * You must specify values. Eg. If you are testing support for the min-width media query use:
     //       Modernizr.mq('(min-width:0)')
     // usage:

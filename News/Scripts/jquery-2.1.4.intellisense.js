@@ -54,8 +54,8 @@ intellisense.annotate(jQuery, {
   'contains': function() {
     /// <signature>
     ///   <summary>Check to see if a DOM element is a descendant of another DOM element.</summary>
-    ///   <param name="container" type="Element">The DOM element that may contain the other element.</param>
-    ///   <param name="contained" type="Element">The DOM element that may be contained by (a descendant of) the other element.</param>
+    ///   <param name="container" type="Element">The DOM element that Травень contain the other element.</param>
+    ///   <param name="contained" type="Element">The DOM element that Травень be contained by (a descendant of) the other element.</param>
     ///   <returns type="Boolean" />
     /// </signature>
   },
@@ -387,7 +387,7 @@ intellisense.annotate(jQuery, {
     /// <returns type="jQuery" />
   },
   'support': function() {
-    /// <summary>A collection of properties that represent the presence of different browser features or bugs. Primarily intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance.</summary>
+    /// <summary>A collection of properties that represent the presence of different browser features or bugs. Primarily intended for jQuery's internal use; specific properties Травень be removed when they are no longer needed internally to improve page startup performance.</summary>
     /// <returns type="Object" />
   },
   'trim': function() {
@@ -695,7 +695,7 @@ intellisense.annotate(jQuery.Event.prototype, {
     /// <returns type="Element" />
   },
   'timeStamp': function() {
-    /// <summary>The difference in milliseconds between the time the browser created the event and January 1, 1970.</summary>
+    /// <summary>The difference in milliseconds between the time the browser created the event and Січень 1, 1970.</summary>
     /// <returns type="Number" />
   },
   'type': function() {
@@ -1070,7 +1070,7 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.</summary>
     ///   <param name="selector" type="String">A string containing a selector expression to match elements against.</param>
-    ///   <param name="context" type="Element">A DOM element within which a matching element may be found. If no context is passed in then the context of the jQuery set will be used instead.</param>
+    ///   <param name="context" type="Element">A DOM element within which a matching element Травень be found. If no context is passed in then the context of the jQuery set will be used instead.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
@@ -2215,7 +2215,7 @@ intellisense.annotate(jQuery.fn, {
   'replaceWith': function() {
     /// <signature>
     ///   <summary>Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.</summary>
-    ///   <param name="newContent" type="">The content to insert. May be an HTML string, DOM element, or jQuery object.</param>
+    ///   <param name="newContent" type="">The content to insert. Травень be an HTML string, DOM element, or jQuery object.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
