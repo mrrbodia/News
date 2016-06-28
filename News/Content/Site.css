@@ -337,13 +337,14 @@ i.small {
    width: 12%;
 }
 #logo {
-    position: absolute;
-    top: -3%;
+     position: absolute;
+    top: -5%;
     left: 14%;
     color: grey;
+    letter-spacing: 3px;
 }
 #logo:hover {
-    color:#00bcd4;
+    color:white;
 }
 #donwload-icon {
     font-size: 50px;
@@ -378,11 +379,17 @@ i.updateNews {
     font-size:5em;
     margin-left:11px;
 }
-i.login:hover, i.print:hover {
-    color:#00bcd4 ;
+i.login {
+    color:grey;
 }
-i.logout:hover {
-    color:#00bcd4 ;
+i.print:hover {
+    color:#00bcd4;
+}
+i.login:hover{
+    color:white;
+}
+.logout:hover {
+    color:#00bcd4;
 }
 .parallax img {
 display:block;

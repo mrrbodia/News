@@ -4,21 +4,20 @@
 }
 <div id="blur-container">
     <div id="wrapper-form">
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+        <form action="/login" method="post" autocomplete="off">
 
-        <div id="LoginForm">
-            <div>
-                @Html.ValidationMessageFor(model => model.Email)
-                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Введіть email", autocomplete="false" })
+            @Html.AntiForgeryToken()
+            <div id="LoginForm">
+                <div>
+                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Введіть email", autocomplete = "false" })
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(model => model.Password)
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Введіть пароль", autocomplete = "false" })
+                </div>
+                <button type="submit" class="btn waves-effect cyan waves-light width100" id="logIn">Увійти</button>
             </div>
-            <div>
-                @Html.ValidationMessageFor(model => model.Password)
-                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Введіть пароль",autocomplete="false" })
-            </div>
-            <button type="submit" class="btn waves-effect cyan waves-light width100" id="logIn">Увійти</button>
-        </div>
-    }
+        </form>
 </div>
     </div>
