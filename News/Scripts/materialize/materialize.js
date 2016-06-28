@@ -5888,7 +5888,7 @@ DatePicker.defaults = (function( prefix ) {
         // Months and weekdays
         monthsFull: [ 'Січень', 'February', 'Березень', 'Квітень', 'Травень', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
         monthsShort: [ 'Jan', 'Feb', 'Mar', 'Apr', 'Травень', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
-        weekdaysFull: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ],
+        weekdaysFull: [ 'Sunday', 'Monday', 'Вівторок', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ],
         weekdaysShort: [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
 
         // Materialize modified

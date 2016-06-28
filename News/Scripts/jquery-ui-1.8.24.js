@@ -6931,7 +6931,7 @@ function Datepicker() {
 		monthNames: ['Cічень','Лютий','Березень','Квітень','Травень','Червень',
 			'Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'], // Names of months for drop-down and formatting
 		monthNamesShort: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'], // For formatting
-		dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], // For formatting
+		dayNames: ['Sunday', 'Monday', 'Вівторок', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], // For formatting
 		dayNamesShort: ['Нед', 'Пон', 'Вів', 'Сер', 'Чет', 'Пят', 'Суб'], // For formatting
 		dayNamesMin: ['Нед', 'Пон', 'Вів', 'Сер', 'Чет', 'Пят', 'Суб'], // Column headings for days starting at Sunday
 		weekHeader: 'Wk', // Column header for week of the year

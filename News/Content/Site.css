@@ -84,7 +84,7 @@ div.event_holder {
 
 div.event_wrapper {
     width: 100%;
-    max-width: 720px;
+    max-width: 1000px;
     min-width: 400px;
     margin: 0 auto;
     padding: 0;
@@ -278,7 +278,6 @@ i.small {
     font-size: 2rem;
     position: absolute;
     top: 120px;
-    margin-left: 30px;
     color: grey;
     cursor: pointer;
 }
@@ -341,9 +340,38 @@ i.small {
     position: absolute;
     top: -3%;
     left: 14%;
+    color: #64b5f6;
 }
 #donwload-icon {
     font-size: 50px;
 }
 li#menu-item-309 {
-    font-size: 20px;}
+    font-size: 20px;
+}
+div.buttons {
+    float:right;  
+    font-size:15px;  
+}
+div.event_wrapper {
+    height: 245px;
+}
+.event_wrapper h1 {
+    font-size:2.1em;
+    color:#64b5f6;
+}
+.category_links {
+    font-size: 1.3em;
+}
+#admin-create {
+    display:none;
+    margin: 0 auto;
+    width: 50%;
+}
+.create-button {
+    float:right;
+    margin:5px;
+}
+i.updateNews {
+    font-size:5em;
+    margin-left:11px;
+}

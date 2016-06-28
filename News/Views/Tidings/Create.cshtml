@@ -3,14 +3,17 @@
     {
         @Html.AntiForgeryToken()
         <div>
+            @Html.LabelFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
             @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control"} })
             @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })    
         </div>
         <div>
+            @Html.LabelFor(model => model.Discription, new { htmlAttributes = new { @class = "form-control" } })
             @Html.EditorFor(model => model.Discription, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Discription, "", new { @class = "text-danger" })
         </div>
         <div>
-            <input id="create-button" type="submit" value="Створити" />
+            <button class="btn waves-effect waves-light btn-right" type="submit">Cтворити</button>
+            <button class="btn red darken-3 waves-effect waves-light btn-right decline-create" type="reset">Відмінити</button>
         </div>
     }
