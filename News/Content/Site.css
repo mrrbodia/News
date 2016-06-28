@@ -340,7 +340,10 @@ i.small {
     position: absolute;
     top: -3%;
     left: 14%;
-    color: #64b5f6;
+    color: grey;
+}
+#logo:hover {
+    color:#00bcd4;
 }
 #donwload-icon {
     font-size: 50px;
@@ -357,7 +360,7 @@ div.event_wrapper {
 }
 .event_wrapper h1 {
     font-size:2.1em;
-    color:#64b5f6;
+    color:#00bcd4 ;
 }
 .category_links {
     font-size: 1.3em;
@@ -374,4 +377,26 @@ div.event_wrapper {
 i.updateNews {
     font-size:5em;
     margin-left:11px;
+}
+i.login:hover, i.print:hover {
+    color:#00bcd4 ;
+}
+i.logout:hover {
+    color:#00bcd4 ;
+}
+.parallax img {
+display:block;
+}
+#blur-container {
+    background:url('../Content/images/city_bridge_rail_fog_blurred_glare_cars_traffic_47826_3840x2160.jpg') no-repeat;
+    width:100%;
+    height:907px;
+}
+#wrapper-form{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    margin: -125px 0 0 -125px;
 }

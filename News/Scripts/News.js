@@ -10,14 +10,19 @@
             $('.update', $newsContainer).hide();
         })
 
-        var a = document.getElementsByClassName('create-button')[0];
+        var createButton = document.getElementsByClassName('create-button')[0];
         var createPopup = document.getElementById('admin-create');
-        a.onclick = function () {
+        createButton.onclick = function () {
+            debugger;
             createPopup.style.display = "block";
-            a.style.display = "none";
+            createButton.style.display = "none";
         }
-        var b = document.getElementsByClassName('decline-create')[0];
-        b.onclick = function () {
+        var declineButton = document.getElementsByClassName('decline-create')[0];
+        declineButton.onclick = function () {
+            debugger;
             createPopup.style.display = "none";
-            a.style.display = "block"
+            createButton.style.display = "block"
+        }
+        if () {
+            $('input[name="password"]').attr('autocomplete', 'off');
         }

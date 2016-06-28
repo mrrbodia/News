@@ -26,20 +26,20 @@
                     if (User.IsInRole("Admin"))
                     {
                         <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
-                            <a href="@Url.RouteUrl("ShowXml")"><i class="large material-icons">print</i></a>
+                            <a href="@Url.RouteUrl("ShowXml")"><i class="large material-icons print">print</i></a>
                         </li>
                     }
                     <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
                         Вітаємо, @User.Identity.Name
                     </li>
                     <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
-                       <a href="@Url.RouteUrl("LogOut")"><i class="large material-icons">power_settings_new</i></a>
+                       <a href="@Url.RouteUrl("LogOut")"><i class="large material-icons logout">power_settings_new</i></a>
                     </li>
                 }
                 else
                 {
-                    <li id="menu-item-311" class="menu-item menu-item-type-post_type_archive menu-item-object-design menu-item-311">
-                        @Html.RouteLink("Увійти", "logIn", null)
+                    <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                        <a href="@Url.RouteUrl("LogIn")"><i class="large material-icons login">power_settings_new</i></a>
                     </li>
                 }
             </ul>
