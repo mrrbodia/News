@@ -23,6 +23,4 @@
             createPopup.style.display = "none";
             createButton.style.display = "block"
         }
-        if () {
-            $('input[name="password"]').attr('autocomplete', 'off');
-        }
+     
