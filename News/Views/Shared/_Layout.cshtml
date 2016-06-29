@@ -46,46 +46,33 @@
         </div>
     </nav>
 
-
-    @*<header id="header">
-        <div class="main-menu dark">
-	        <div class="row">
-		        <div class="grid_2 grid_btn icon-tab">
-			        
-			        <a class="spring show-phone"></a>
-		        </div><!-- 2 -->
-		        <div class="grid_2 right hide-phone grid_btn">
-			        <ul id="main-menu" class="menu-side">
-                         @if (User.Identity.IsAuthenticated)
-                        {
-                            if (User.IsInRole("Admin"))
-                            {
-                                <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
-                                    <a href="@Url.RouteUrl("ShowXml")">XML</a>
-                                </li>
-                            }
-                            <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
-                                @User.Identity.Name
-                            </li>
-                             <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
-                                @Html.RouteLink("Вийти", "LogOut", null)
-                            </li>
-                         }
-                        else
-                        {
-                        <li id="menu-item-311" class="menu-item menu-item-type-post_type_archive menu-item-object-design menu-item-311">
-                            @Html.RouteLink("Увійти", "logIn", null)
-                        </li>
-                        }
-                    </ul>
-
-		        </div><!-- 10 -->
-	        </div><!-- Row -->
-        </div>
-    </header>*@
     <div id="content">
         @RenderBody()
     </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Зв'язок</h5>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Як з нами зв'язатися</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Вконтакті Богдана</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Вконтакті Влада</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">ЛінкедІн Богдана</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">ЛінкедІн Влада</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Всі права захищені
+                <a class="grey-text text-lighten-4 right" href="#!">Більше посилань</a>
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/materialize/materialize.min.js")

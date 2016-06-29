@@ -407,3 +407,7 @@ display:block;
     left: 47%;
     margin: -125px 0 0 -125px;
 }
+footer.page-footer{
+    margin-top:0px;
+    background-color: #424242;
+}

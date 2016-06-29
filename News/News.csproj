@@ -163,7 +163,6 @@
     <Content Include="Content\images\blur+ty.jpg" />
     <Content Include="Content\images\city_bridge_rail_fog_blurred_glare_cars_traffic_47826_3840x2160.jpg" />
     <Content Include="Content\images\icon.png" />
-    <Content Include="Content\images\xml.png" />
     <Content Include="Content\materialize\css\materialize.css" />
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
