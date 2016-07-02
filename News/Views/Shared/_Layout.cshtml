@@ -18,8 +18,9 @@
         <div class="nav-wrapper">
             <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class=" brand-logo" data-original-title="Home">
                 <img id="globe" src="~/Content/images/icon.png" />
-              <span id="logo">Breaking news</span>              
+              <span id="logo">@Resources.Resource.breakingNews</span>              
             </a>
+
             <ul class="right hide-on-med-and-down">
                 @if (User.Identity.IsAuthenticated)
                 {
@@ -42,9 +43,23 @@
                         <a href="@Url.RouteUrl("LogIn")"><i class="large material-icons login">power_settings_new</i></a>
                     </li>
                 }
-            </ul>
+            </ul> 
+            <div id="change-culture-wrapper">
+                <div id="changeCulture">
+                    @using (Html.BeginForm("ChangeCulture", "Language"))
+                    {       
+                        <select name="lang">
+                            <option value="ru" class="collection-item">Русский</option>
+                            <option value="en" class="collection-item">English</option>
+                            <option value="de" class="collection-item">Deutsch</option>
+                        </select>
+                    <button type="submit" class="btn  grey darken-2 waves-light btn-right" name="submit">Choose</button>
+                    }
+                </div>
+            </div>        
         </div>
     </nav>
+    
 
     <div id="content">
         @RenderBody()

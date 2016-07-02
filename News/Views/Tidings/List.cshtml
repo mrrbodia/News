@@ -37,8 +37,8 @@
                             <h1>Редагувати</h1>
                             <div class="category_links">
 			                    <div class="category location">
-                                @Html.Partial("Update",item)
-                                    </div>
+                                     @Html.Partial("Update",item)
+                                 </div>
                             </div>
                         </div>
                     </div>
@@ -46,13 +46,6 @@
             </div>
 
         }
-    </div>
-      
-    <div id="create">
-        <div class="create-content">
-        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
-
-        </div>
     </div>
 }
 else
@@ -95,10 +88,12 @@ else
 
         }
     </div>
-    <a class="btn-floating btn-large waves-effect waves-light cyan lighten-2 create-button"><i class="material-icons">add</i></a>
-    <div id="admin-create">     
-        <div class="create-content">
-        @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
+    <a class="btn-floating btn-large waves-effect waves-light cyan lighten-2 create-button" href="javascript:PopUpShow()"><i class="material-icons">add</i></a>
+
+
+    <div class="b-popup" id="popup1">
+        <div class="b-popup-content">
+            @Html.Partial("Create", new News.Business.ViewModels.TidingsViewModel())
         </div>
     </div>
         

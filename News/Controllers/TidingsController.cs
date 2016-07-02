@@ -9,9 +9,11 @@ using News.Business.Models;
 using News.Business.Components;
 using News.Business.Providers;
 using System.Text;
+using News.Filters;
 
 namespace News.Controllers
-{
+{   
+    [Culture]
     public class TidingsController : Controller
     {
         private readonly TidingManager tidingManager;

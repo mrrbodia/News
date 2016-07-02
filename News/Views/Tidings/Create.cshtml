@@ -1,6 +1,7 @@
 ﻿@model News.Business.ViewModels.TidingsViewModel
     @using (Html.BeginForm("Create", "Tidings", FormMethod.Post))
     {
+        <h3>Створити новину</h3>
         @Html.AntiForgeryToken()
         <div>
             @Html.LabelFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
@@ -12,8 +13,10 @@
             @Html.EditorFor(model => model.Discription, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Discription, "", new { @class = "text-danger" })
         </div>
-        <div>
-            <button class="btn waves-effect cyan waves-light btn-right" type="submit">Cтворити</button>
-            <button class="btn red darken-3 waves-effect waves-light btn-right decline-create" type="reset">Відмінити</button>
+        <div id="controls">
+            <div id="wrapper-controls">
+                <button class="btn waves-effect cyan right waves-light btn-right" type="submit">Cтворити</button>
+                <a class="btn red darken-3 waves-effect waves-light btn-right decline-create" href="javascript:PopUpHide()">Відмінити</a>
+            </div>
         </div>
     }

@@ -1,4 +1,10 @@
-﻿        $(".updateNews").on("click", function () {
+﻿$(document).ready(function () {
+    //Скрыть PopUp при загрузке страницы    
+    PopUpHide();
+});
+
+
+$(".updateNews").on("click", function () {
             var $newsContainer = $(this).parents('.event_holder').first();
             $newsContainer.find('.event_wrapper').eq(0).hide();
             $('.update', $newsContainer).show();
@@ -10,17 +16,15 @@
             $('.update', $newsContainer).hide();
         })
 
-        var createButton = document.getElementsByClassName('create-button')[0];
-        var createPopup = document.getElementById('admin-create');
-        createButton.onclick = function () {
-            debugger;
-            createPopup.style.display = "block";
-            createButton.style.display = "none";
+
+
+        //Функция отображения PopUp
+        function PopUpShow() {
+            $("#popup1").css("display", "block");
+            $("#popup1").show();
         }
-        var declineButton = document.getElementsByClassName('decline-create')[0];
-        declineButton.onclick = function () {
-            debugger;
-            createPopup.style.display = "none";
-            createButton.style.display = "block"
+        //Функция скрытия PopUp
+        function PopUpHide() {
+            $("#popup1").hide();
         }
      
