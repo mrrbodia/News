@@ -117,10 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="author" xml:space="preserve">
+    <value>Author</value>
+  </data>
   <data name="breakingNews" xml:space="preserve">
     <value>Breaking news</value>
   </data>
+  <data name="choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
   <data name="chooseTheLanguage" xml:space="preserve">
-    <value>choose the language</value>
+    <value>Change language</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="createSomeNews" xml:space="preserve">
+    <value>Create news</value>
+  </data>
+  <data name="decline" xml:space="preserve">
+    <value>Decline</value>
+  </data>
+  <data name="enableJS" xml:space="preserve">
+    <value>Please, enable javascript</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="enterEmail" xml:space="preserve">
+    <value>Enter email</value>
+  </data>
+  <data name="enterPassword" xml:space="preserve">
+    <value>Enter password</value>
+  </data>
+  <data name="entry" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="leaveComment" xml:space="preserve">
+    <value>Leave your comment</value>
+  </data>
+  <data name="nameRequired" xml:space="preserve">
+    <value>This field is required</value>
+  </data>
+  <data name="publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="russian" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="ukrainian" xml:space="preserve">
+    <value>Ukrainian</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Update</value>
   </data>
 </root>

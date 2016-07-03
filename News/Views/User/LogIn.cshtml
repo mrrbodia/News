@@ -1,4 +1,5 @@
 ﻿@model News.Business.ViewModels.UserViewModel
+@using Resources       
 @{
     ViewBag.Title = "LogIn";
 }
@@ -10,13 +11,13 @@
             <div id="LoginForm">
                 <div>
                     @Html.ValidationMessageFor(model => model.Email)
-                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Введіть email", autocomplete = "false" })
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = Resources.Resource.enterEmail, autocomplete = "false" })
                 </div>
                 <div>
                     @Html.ValidationMessageFor(model => model.Password)
-                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Введіть пароль", autocomplete = "false" })
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = Resources.Resource.enterPassword, autocomplete = "false" })
                 </div>
-                <button type="submit" class="btn waves-effect cyan waves-light width100" id="logIn">Увійти</button>
+                <button type="submit" class="btn waves-effect cyan waves-light width100" id="logIn">@Resources.Resource.entry</button>
             </div>
         </form>
 </div>

@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <noscript><h3 class="error-massage">Увімкніть js</h3></noscript>
+    <noscript><h3 class="error-massage">@Resources.Resource.enableJS</h3></noscript>
 
 
     <nav class="grey darken-3">
@@ -45,17 +45,18 @@
                 }
             </ul> 
             <div id="change-culture-wrapper">
-                <div id="changeCulture">
+                <section id="changeCulture">
                     @using (Html.BeginForm("ChangeCulture", "Language"))
-                    {       
+                    {
                         <select name="lang">
-                            <option value="ru" class="collection-item">Русский</option>
-                            <option value="en" class="collection-item">English</option>
-                            <option value="de" class="collection-item">Deutsch</option>
+                            <option disabled selected>@Resources.Resource.chooseTheLanguage</option>
+                            <option value="uk" class="collection-item">@Resources.Resource.ukrainian</option>
+                            <option value="ru" class="collection-item">@Resources.Resource.russian</option>
+                            <option value="en" class="collection-item">@Resources.Resource.english</option>
                         </select>
-                    <button type="submit" class="btn  grey darken-2 waves-light btn-right" name="submit">Choose</button>
+                        <button type="submit" class="btn  grey darken-2 waves-light btn-right" name="submit">@Resources.Resource.choose</button>
                     }
-                </div>
+                </section>
             </div>        
         </div>
     </nav>
@@ -64,30 +65,6 @@
     <div id="content">
         @RenderBody()
     </div>
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Зв'язок</h5>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Як з нами зв'язатися</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Вконтакті Богдана</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Вконтакті Влада</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">ЛінкедІн Богдана</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">ЛінкедІн Влада</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2016 Всі права захищені
-                <a class="grey-text text-lighten-4 right" href="#!">Більше посилань</a>
-            </div>
-        </div>
-    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/materialize/materialize.min.js")

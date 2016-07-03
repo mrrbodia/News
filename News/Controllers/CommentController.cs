@@ -1,6 +1,7 @@
 ﻿using News.Business.Components.Managers;
 using News.Business.Models;
 using News.Business.ViewModels;
+using News.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace News.Controllers
 {
+    [Culture]
     public class CommentController : Controller
     {
         CommentManager commentManager;

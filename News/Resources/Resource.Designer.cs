@@ -61,7 +61,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Новини ТСН.
+        ///   Ищет локализованную строку, похожую на Автор.
+        /// </summary>
+        public static string author {
+            get {
+                return ResourceManager.GetString("author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новости.
         /// </summary>
         public static string breakingNews {
             get {
@@ -70,11 +79,146 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Виберіть мову.
+        ///   Ищет локализованную строку, похожую на Выбрать.
+        /// </summary>
+        public static string choose {
+            get {
+                return ResourceManager.GetString("choose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите язык.
         /// </summary>
         public static string chooseTheLanguage {
             get {
                 return ResourceManager.GetString("chooseTheLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать.
+        /// </summary>
+        public static string create {
+            get {
+                return ResourceManager.GetString("create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать новость.
+        /// </summary>
+        public static string createSomeNews {
+            get {
+                return ResourceManager.GetString("createSomeNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отменить.
+        /// </summary>
+        public static string decline {
+            get {
+                return ResourceManager.GetString("decline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Включите джаваскрипт.
+        /// </summary>
+        public static string enableJS {
+            get {
+                return ResourceManager.GetString("enableJS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Английский.
+        /// </summary>
+        public static string english {
+            get {
+                return ResourceManager.GetString("english", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите электронную почту.
+        /// </summary>
+        public static string enterEmail {
+            get {
+                return ResourceManager.GetString("enterEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите пароль.
+        /// </summary>
+        public static string enterPassword {
+            get {
+                return ResourceManager.GetString("enterPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Войти.
+        /// </summary>
+        public static string entry {
+            get {
+                return ResourceManager.GetString("entry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оставьте свой коммментарий.
+        /// </summary>
+        public static string leaveComment {
+            get {
+                return ResourceManager.GetString("leaveComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Это поле должно быть заполненым.
+        /// </summary>
+        public static string nameRequired {
+            get {
+                return ResourceManager.GetString("nameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Опубликовать.
+        /// </summary>
+        public static string publish {
+            get {
+                return ResourceManager.GetString("publish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Русский.
+        /// </summary>
+        public static string russian {
+            get {
+                return ResourceManager.GetString("russian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Украинский.
+        /// </summary>
+        public static string ukrainian {
+            get {
+                return ResourceManager.GetString("ukrainian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Редактировать.
+        /// </summary>
+        public static string update {
+            get {
+                return ResourceManager.GetString("update", resourceCulture);
             }
         }
     }

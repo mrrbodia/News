@@ -20,7 +20,7 @@ namespace News.Filters
                 cultureName = "ru";
 
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en" };
+            List<string> cultures = new List<string>() { "ru", "en","uk" };
             if (!cultures.Contains(cultureName))
             {
                 cultureName = "ru";

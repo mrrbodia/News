@@ -8,9 +8,11 @@ using News.Business.Components.Managers;
 using System.Web.Security;
 using News.Business.Models;
 using News.Business.Components;
+using News.Filters;
 
 namespace News.Controllers
 {
+    [Culture]
     public class UserController : Controller
     {
         private readonly UserManager userManager;

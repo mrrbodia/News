@@ -13,7 +13,7 @@ namespace News.Controllers
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en" };
+            List<string> cultures = new List<string>() { "ru", "en", "uk" };
             if (!cultures.Contains(lang))
             {
                 lang = "ru";

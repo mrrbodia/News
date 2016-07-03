@@ -1,11 +1,12 @@
 ﻿@model  News.Business.ViewModels.CommentViewModel
+@using Resources
 @using (Html.BeginForm("AddComment", "Comment", FormMethod.Post, new { onsubmit = "return confirmCaptcha(document.getElementById('cptchid').value)" }))
 {
 
 
     <fieldset>
         <h5 class="blue-grey-text">
-            <p>Залиште свій коментар</p>
+            <p>@Resources.Resource.leaveComment</p>
         </h5>
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -15,7 +16,7 @@
     if (!User.Identity.IsAuthenticated)
     {
         <div class="editor-label">
-            @Html.LabelFor(model => model.AuthorName, "Автор")
+            @Html.LabelFor(model => model.AuthorName, @Resources.Resource.author)
         </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.AuthorName)
@@ -37,8 +38,8 @@
         <div id="captcha" class="editor-label">
         </div>
         <p>
-            <button class="btn waves-effect waves-light dark-blue-grey left" type="submit">Опублікувати</button>
-            <button class="btn waves-effect waves-light red  decline-comment" type="reset">@Html.ActionLink("Відмінити", "List", "Tidings")</button>
+            <button class="btn waves-effect waves-light dark-blue-grey left" type="submit">@Resources.Resource.publish</button>
+            <button class="btn waves-effect waves-light red  decline-comment" type="reset">@Html.ActionLink(Resources.Resource.decline, "List", "Tidings")</button>
         </p>
     </fieldset>
 }

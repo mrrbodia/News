@@ -1,5 +1,6 @@
 ﻿@model News.Business.ViewModels.TidingsViewModel
 @using News.Business.ViewModels
+@using Resources
 @if (User.IsInRole("Filler"))
 {
     <div class="content">
@@ -29,7 +30,7 @@
                 {
                     <div class="update">
                         <div class="event_wrapper">
-                            <h1>Редагувати</h1>
+                            <h1>@Resources.Resource.update</h1>
                             <div class="category_links">
 			                    <div class="category location">
                                 @Html.Partial("Update",item)
@@ -68,7 +69,7 @@ else
                 </div>
                     <div class="update">
                         <div class="event_wrapper">
-                            <h1>Редагувати</h1>
+                            <h1>@Resources.Resource.update</h1>
                             <div class="category_links">
 			                    <div class="category location">
                                 @Html.Partial("Update",item)
