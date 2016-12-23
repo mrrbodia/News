@@ -9,18 +9,21 @@ using News.Business.Models;
 using News.Business.Components;
 using News.Business.Providers;
 using System.Text;
-using News.Filters;
+using News.Business.Components.Attributes;
 
 namespace News.Controllers
-{   
+{
     [Culture]
     public class TidingsController : Controller
     {
         private readonly TidingManager tidingManager;
 
-        public TidingsController(TidingManager tidingManager)
+        private readonly CommentManager commentManager;
+
+        public TidingsController(TidingManager tidingManager, CommentManager commentManager)
         {
             this.tidingManager = tidingManager;
+            this.commentManager = commentManager;
         }
 
         [HttpGet]
@@ -40,7 +43,7 @@ namespace News.Controllers
             var news = tidingManager.GetList();
             var xml = XmlProvider<Tidings>.Serialize(news);
             var name = "news";
-            return File(Encoding.Default.GetBytes(xml), "text/xml", name + ".xml");
+            return File(Encoding.UTF8.GetBytes(xml), "text/xml", name + ".xml");
         }
 
         [HttpGet]
@@ -93,6 +96,7 @@ namespace News.Controllers
         public ActionResult Tiding(string id)
         {
             var model = AutoMapper.Mapper.Map<TidingsViewModel>(tidingManager.Get(id));
+            model.Comments = commentManager.GetByTidingId(id);
             return View(model);
         }
 

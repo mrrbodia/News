@@ -1,0 +1,38 @@
+﻿@model News.Business.ViewModels.ContentBlockDesignModel
+
+<div class="popup-editor">
+
+    <h2>Create Content Block</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Id)
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary()
+            <div class="row">
+                <label>Type</label>
+                <div class="control admin-dropdown type-dropdown">
+                    @Html.EnumDropDownListFor(model => model.Type, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <label>Name</label>
+                <div class="control mui-textfield">
+                    @Html.EditorFor(model => model.Name)
+                </div>
+            </div>
+            <div class="row content-row">
+                <label class="target-label">Content Or Url</label>
+                @Html.EditorFor(model => model.Content)
+            </div>
+            <div class="row">
+
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn waves-effect cyan waves-light btn-right" type="submit">Cтворити</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

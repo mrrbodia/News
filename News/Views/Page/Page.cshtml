@@ -1,0 +1,21 @@
+﻿@using News.Business.Models.Admin
+@model IList<ContentBlock>
+
+<div class="mui-panel center custom-form">
+    @foreach (var item in Model)
+    {
+        <div>
+            @switch (item.Type)
+            {
+                case ContentBlock.BlockType.Html:
+                    @Html.Partial("_Html", item.Content)
+                    break;
+                case ContentBlock.BlockType.Feed:
+                    @Html.Partial("_Feed", item);
+                    break;
+                default:
+                    break;
+            }
+        </div>
+    }
+</div>

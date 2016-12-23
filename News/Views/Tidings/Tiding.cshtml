@@ -1,6 +1,5 @@
 ﻿@model News.Business.ViewModels.TidingsViewModel
 @using News.Business.ViewModels
-@using Resources
 @if (User.IsInRole("Filler"))
 {
     <div class="content">
@@ -30,7 +29,7 @@
                 {
                     <div class="update">
                         <div class="event_wrapper">
-                            <h1>@Resources.Resource.update</h1>
+                            <h1>Редагувати</h1>
                             <div class="category_links">
 			                    <div class="category location">
                                 @Html.Partial("Update",item)
@@ -69,7 +68,7 @@ else
                 </div>
                     <div class="update">
                         <div class="event_wrapper">
-                            <h1>@Resources.Resource.update</h1>
+                            <h1>Редагувати</h1>
                             <div class="category_links">
 			                    <div class="category location">
                                 @Html.Partial("Update",item)
@@ -78,7 +77,6 @@ else
                         </div>
                     </div>
             </div>
-
         }
     </div>
         
@@ -95,18 +93,26 @@ else
                           <span>@item.PublishData.Day</span>
                         </time>
 	                </span>	
-				
 		                    <h1>@item.Title</h1>
-			
                     <div class="category_links">
-			        <div class="category location">
+			            <div class="category location">
                             <div>@item.Discription</div>
-                    </div>			
+                        </div>			
                     </div>
                 </div>
             </div>
     }
 @Html.Partial("~/Views/Comment/Create.cshtml", new CommentViewModel(Model.Id))
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+<p><input type="text" ng-model="test"></p>
+
+<ul>
+  <li ng-repeat="x in names | filter:test">
+    {{ x }}
+  </li>
+</ul>
 <pre>
     @ViewBag.xml
 </xmp>

@@ -12,7 +12,7 @@ namespace News.Business.Components.Managers
     {
         public CommentManager(ICommentDataProvider provider) : base(provider) { }
 
-        public IList<Comment> GetByEventId(string id)
+        public IList<Comment> GetByTidingId(string id)
         {
             return provider.GetByTidingId(id);
         }

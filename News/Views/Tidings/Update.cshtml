@@ -1,5 +1,5 @@
 ﻿@model News.Business.ViewModels.TidingsViewModel
-@using Resources
+
 @{
     ViewBag.Title = "Update";
 }
@@ -20,8 +20,8 @@
             @Html.ValidationMessageFor(model => model.Discription, "", new { @class = "text-danger" })
         </div>
         <div class="buttons">
-             <button class="btn waves-effect cyan waves-light btn-right" type="submit">@Resources.Resource.update</button>
-             <button class="btn red darken-3 waves-effect waves-light btn-right">@Resources.Resource.decline</button>
+             <button class="btn waves-effect cyan waves-light btn-right" type="submit">Редагувати</button>
+             <button class="btn red darken-3 waves-effect waves-light btn-right">Відмінити</button>
         </div>
     </div>
 }

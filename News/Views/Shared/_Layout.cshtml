@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="phonecatApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -7,20 +7,23 @@
     @Styles.Render("~/Content/materialize/css/materialize.min.css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js")
+    @Scripts.Render("//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js")
+@*    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js")*@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
-<body>
-    <noscript><h3 class="error-massage">@Resources.Resource.enableJS</h3></noscript>
+<body ng-controller="PhoneListController">
+    <noscript><h3 class="error-massage">Увімкніть js</h3></noscript>
+    <hg-route></hg-route>
 
 
     <nav class="grey darken-3">
         <div class="nav-wrapper">
             <a href="@Url.RouteUrl("Home")" rel="tooltip" title="" data-placement="right" class=" brand-logo" data-original-title="Home">
                 <img id="globe" src="~/Content/images/icon.png" />
-              <span id="logo">@Resources.Resource.breakingNews</span>              
+              <span id="logo">Breaking news</span>              
             </a>
-
             <ul class="right hide-on-med-and-down">
                 @if (User.Identity.IsAuthenticated)
                 {
@@ -43,28 +46,33 @@
                         <a href="@Url.RouteUrl("LogIn")"><i class="large material-icons login">power_settings_new</i></a>
                     </li>
                 }
-            </ul> 
-            <div id="change-culture-wrapper">
-                <section id="changeCulture">
-                    @using (Html.BeginForm("ChangeCulture", "Language"))
-                    {
-                        <select name="lang">
-                            <option disabled selected>@Resources.Resource.chooseTheLanguage</option>
-                            <option value="uk" class="collection-item">@Resources.Resource.ukrainian</option>
-                            <option value="ru" class="collection-item">@Resources.Resource.russian</option>
-                            <option value="en" class="collection-item">@Resources.Resource.english</option>
-                        </select>
-                        <button type="submit" class="btn  grey darken-2 waves-light btn-right" name="submit">@Resources.Resource.choose</button>
-                    }
-                </section>
-            </div>        
+            </ul>
         </div>
     </nav>
-    
 
     <div id="content">
         @RenderBody()
     </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Зв'язок</h5>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Як з нами зв'язатися</h5>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Всі права захищені
+                <a class="grey-text text-lighten-4 right" href="#!">Більше посилань</a>
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/materialize/materialize.min.js")

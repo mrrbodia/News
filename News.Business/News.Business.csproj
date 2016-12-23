@@ -45,7 +45,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Components\Attributes\CultureAttribute.cs" />
     <Compile Include="Components\HashDecoder.cs" />
     <Compile Include="Components\Lucene\Attributes\Storable.cs" />
     <Compile Include="Components\Lucene\BaseSearcher.cs" />
@@ -65,13 +65,21 @@
     <Compile Include="Components\Lucene\Searcher.cs" />
     <Compile Include="Components\Managers\BaseManager.cs" />
     <Compile Include="Components\Managers\CommentManager.cs" />
+    <Compile Include="Components\Managers\ContentBlockManager.cs" />
     <Compile Include="Components\Managers\LuceneManager.cs" />
+    <Compile Include="Components\Managers\Mailer.cs" />
+    <Compile Include="Components\Managers\PageManager.cs" />
     <Compile Include="Components\Managers\RoleManager.cs" />
     <Compile Include="Components\Managers\TidingManager.cs" />
     <Compile Include="Components\Managers\UserManager.cs" />
     <Compile Include="Components\UserContext.cs" />
     <Compile Include="IDataProviders\ICommentDataProvider.cs" />
+    <Compile Include="IDataProviders\IContentBlockProvider.cs" />
+    <Compile Include="IDataProviders\IPageProvider.cs" />
+    <Compile Include="Models\Admin\ContentBlock.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Providers\XmlProvider.cs" />
     <Compile Include="IDataProviders\IDataProvider.cs" />
     <Compile Include="IDataProviders\IRoleDataProvider.cs" />
@@ -82,8 +90,13 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AdminDataViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\ContentBlockDesignModel.cs" />
+    <Compile Include="ViewModels\FlexiPageDataModel.cs" />
+    <Compile Include="ViewModels\PageDesignModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\TidingsViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>

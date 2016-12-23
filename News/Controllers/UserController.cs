@@ -8,11 +8,9 @@ using News.Business.Components.Managers;
 using System.Web.Security;
 using News.Business.Models;
 using News.Business.Components;
-using News.Filters;
 
 namespace News.Controllers
 {
-    [Culture]
     public class UserController : Controller
     {
         private readonly UserManager userManager;
@@ -27,10 +25,27 @@ namespace News.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult LogIn()
         {
-            //SetNewRole();
             return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid && model.Password.Equals(model.RepeatPassword))
+            {
+                CreateNewUser(model.Email, model.Password);
+            }
+            return View(model);
         }
 
         [HttpPost]
@@ -51,7 +66,7 @@ namespace News.Controllers
                 FormsAuthentication.SetAuthCookie(user.Email, false);
                 if (User.IsInRole("Admin"))
                 {
-                    return RedirectToRoute("Home");//adminPage
+                    return RedirectToRoute("Admin");//adminPage
                 }
                 if (User.IsInRole("Filler"))
                 {
@@ -83,6 +98,18 @@ namespace News.Controllers
 
             admin.Role = roleAdmin;
             userManager.Create(admin);
+        }
+
+        protected void CreateNewUser(string email, string password)
+        {
+            var user = new User();
+            user.Email = email;
+            user.PasswordSalt = HashDecoder.GenarateSalt();
+            user.Password = HashDecoder.ComputeHash(password, user.PasswordSalt);
+
+            var role = roleManager.GetRoleForName("Filler");
+            user.Role = role;
+            userManager.Create(user);
         }
     }
 }

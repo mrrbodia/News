@@ -1,0 +1,14 @@
+﻿@model News.Business.ViewModels.AdminDataViewModel
+@{
+    ViewBag.Title = "Admin";
+    
+    var items = Model.Roles.OrderBy(c => c.Name)
+        .Select(c => new SelectListItem { Value = c.Id, Text = c.Name, Selected = c.Id.Equals(Model.Roles.FirstOrDefault().Id) }).ToArray();
+}
+@foreach(var user in Model.Users)
+{
+    <div>@user.Email</div>
+    <div class="input-field col s12">
+        @Html.DropDownList("Roles", items)
+    </div>
+}

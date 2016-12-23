@@ -97,5 +97,36 @@ namespace News.NHibernateDataProvider.DataProviders
                 return listTEntity;
             });
         }
+
+        public virtual IList<TEntity> GetListByField(string field, string value)
+        {
+            IList<TEntity> result = new List<TEntity>();
+
+            var key = String.Format("{0}-{1}-{2}/{3}", System.Reflection.MethodBase.GetCurrentMethod().Name, typeof(TEntity).Name, field, value);
+
+            Execute(session =>
+            {
+                var criteria = session.CreateCriteria(typeof(TEntity));
+                criteria.Add(Restrictions.Eq(field, value));
+                result = criteria.List<TEntity>();
+            });
+            return result;
+        }
+
+        public virtual TEntity GetByField(string field, string value)
+        {
+            TEntity result = null;
+
+            var key = string.Format("{0}-{1}-{2}/{3}", System.Reflection.MethodBase.GetCurrentMethod().Name, typeof(TEntity).Name, field, value);
+
+            Execute(session =>
+            {
+                var criteria = session.CreateCriteria(typeof(TEntity));
+                criteria.Add(Restrictions.Eq(field, value));
+                result = criteria.UniqueResult<TEntity>();
+            });
+
+            return result;
+        }
     }
 }

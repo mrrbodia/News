@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using News.Business.Components.Managers;
 using News.Business.Models;
+using News.Business.Models.Admin;
 using News.Business.ViewModels;
 
 namespace News.App_Start
@@ -18,11 +19,19 @@ namespace News.App_Start
         {
             Mapper
              .CreateMap<Tidings, TidingsViewModel>()
+             .ForMember(t => t.Comments, opt => opt.Ignore())
              .IncludeBase<BaseModel, BaseViewModel>();
 
             Mapper
              .CreateMap<Comment, CommentViewModel>()
              .IncludeBase<BaseModel, BaseViewModel>();
+
+            Mapper
+            .CreateMap<Page, PageDesignModel>()
+            .ForMember(s => s.ContentBlocksVariants, otp => otp.Ignore());
+
+            Mapper
+             .CreateMap<ContentBlock, ContentBlockDesignModel>();
 
         }
 
@@ -36,6 +45,13 @@ namespace News.App_Start
             Mapper
              .CreateMap<CommentViewModel, Comment>()
              .IncludeBase<BaseViewModel, BaseModel>();
+
+            Mapper
+             .CreateMap<PageDesignModel, Page>()
+             .ForMember(x => x.ContentBlocks, otp => otp.Ignore());
+
+            Mapper
+             .CreateMap<ContentBlockDesignModel, ContentBlock>();
         }
     }
 }

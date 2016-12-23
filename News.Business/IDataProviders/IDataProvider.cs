@@ -17,5 +17,9 @@ namespace News.Business.IDataProviders
         IList<T> GetList();
 
         T Get(string id);
+
+        IList<T> GetListByField(string field, string value);
+
+        T GetByField(string field, string value);
     }
 }

@@ -11,5 +11,10 @@ namespace News.Business.Components.Managers
     public class RoleManager : BaseManager<Role, IRoleDataProvider>
     {
         public RoleManager(IRoleDataProvider provider) : base(provider) { }
+
+        public virtual Role GetRoleForName(string name)
+        {
+            return provider.GetRoleForName(name);
+        }
     }
 }

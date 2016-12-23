@@ -27,6 +27,10 @@ namespace News.App_Start
 
             builder.RegisterType<CommentManager>();
 
+            builder.RegisterType<ContentBlockManager>();
+
+            builder.RegisterType<PageManager>();
+
             builder.RegisterType<NHibernateRoleDataProvider>()
                 .As<IRoleDataProvider>();
 
@@ -39,8 +43,13 @@ namespace News.App_Start
             builder.RegisterType<NHibernateCommentDataProvider>()
                .As<ICommentDataProvider>();
 
+            builder.RegisterType<NHibernatePageDataProvider>()
+               .As<IPageProvider>();
+
+            builder.RegisterType<NHibernateContentBlockDataProvider>()
+                .As<IContentBlockProvider>();
+
             var container = builder.Build();
-            //GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
