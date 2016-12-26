@@ -38,6 +38,18 @@ namespace News
            );
 
             routes.MapRoute(
+             name: "CreateTiding",
+             url: "tidings/create",
+                defaults: new { controller = "Tidings", action = "Create" }
+           );
+
+            routes.MapRoute(
+             name: "UpdateTiding",
+             url: "tidings/update",
+                defaults: new { controller = "Tidings", action = "Update" }
+           );
+
+            routes.MapRoute(
              name: "Admin",
              url: "admin",
                 defaults: new { controller = "Admin", action = "Admin" }

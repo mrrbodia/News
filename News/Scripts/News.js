@@ -10,19 +10,26 @@ $(".update-cancel").on("click", function() {
     $('.update', $newsContainer).hide();
 })
 
-var createButton = document.getElementsByClassName('create-button');
+var createButton = $(".create-button");
 var createPopup = document.getElementById('admin-create');
-createButton.onclick = function () {
-    debugger;
+
+$(".create-button").on("click", function () {
     createPopup.style.display = "block";
-    createButton.style.display = "none";
-}
-var declineButton = document.getElementsByClassName('decline-create');
-declineButton.onclick = function () {
-    debugger;
+    createButton.hide();
+});
+
+$(".decline-create").on("click", function () {
     createPopup.style.display = "none";
-    createButton.style.display = "block"
+    createButton.show();
+});
+
+$('.button-collapse').sideNav({
+    menuWidth: 300, // Default is 240
+    edge: 'right', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: true // Choose whether you can drag to open on touch screens
 }
+  );
 
 //phonecatApp.controller('PhoneListController', function PhoneListController($scope) {
 //    $scope.comments = [
@@ -65,17 +72,17 @@ declineButton.onclick = function () {
 //      }
 //  });
 
-angular.module('myApp', []).controller('namesCtrl', function ($scope) {
-    $scope.names = [
-        'Jani',
-        'Carl',
-        'Margareth',
-        'Hege',
-        'Joe',
-        'Gustav',
-        'Birgit',
-        'Mary',
-        'Kai'
-    ];
-});
+//angular.module('myApp', []).controller('namesCtrl', function ($scope) {
+//    $scope.names = [
+//        'Jani',
+//        'Carl',
+//        'Margareth',
+//        'Hege',
+//        'Joe',
+//        'Gustav',
+//        'Birgit',
+//        'Mary',
+//        'Kai'
+//    ];
+//});
      

@@ -144,13 +144,14 @@
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FlexiPageRouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\Admin\ContentBlocksController.cs" />
-    <Compile Include="Controllers\Admin\PagesController.cs" />
+    <Compile Include="Controllers\ContentBlocksController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\FlexiPagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PageController.cs" />
@@ -312,7 +313,6 @@
     </Content>
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Admin\CreateFlexiPage.cshtml" />
-    <Content Include="Views\Pages\CreatePage.cshtml" />
     <Content Include="Views\Pages\PagesList.cshtml" />
     <Content Include="Views\ContentBlocks\CreateContentBlock.cshtml" />
     <Content Include="Views\ContentBlocks\ContentBlocksList.cshtml" />
@@ -320,6 +320,9 @@
     <Content Include="Views\Page\Post.cshtml" />
     <Content Include="Views\Page\_Feed.cshtml" />
     <Content Include="Views\Page\_Html.cshtml" />
+    <Content Include="Views\Pages\CreatePage.cshtml" />
+    <Content Include="Views\Pages\_Layout.cshtml" />
+    <Content Include="Views\ContentBlocks\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\themes\materialize\font\material-design-icons\" />

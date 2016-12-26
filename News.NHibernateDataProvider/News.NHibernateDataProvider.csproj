@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentMigrator">
+      <HintPath>..\packages\FluentMigrator.1.6.2\lib\40\FluentMigrator.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentMigrator.Runner">
+      <HintPath>..\packages\FluentMigrator.Runner.1.6.2\lib\40\FluentMigrator.Runner.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
     </Reference>
@@ -57,6 +63,10 @@
     <Compile Include="DataProviders\NHibernateTidingsDataProvider.cs" />
     <Compile Include="DataProviders\NHibernateRoleDataProvider.cs" />
     <Compile Include="DataProviders\NHibernateUserDataProvider.cs" />
+    <Compile Include="DbVersions\Migrations\Version1\M001_Initial.cs" />
+    <Compile Include="DbVersions\Migrations\Version1\M012_DefaultData.cs" />
+    <Compile Include="DbVersions\Migrations\Version1\M013_BackUpLiveDb.cs" />
+    <Compile Include="DbVersions\Migrator.cs" />
     <Compile Include="NHibernateCore\Helper.cs" />
     <Compile Include="NHibernateCore\Mappings\CommentMap.cs" />
     <Compile Include="NHibernateCore\Mappings\ContentBlockMap.cs" />
@@ -66,7 +76,14 @@
     <Compile Include="NHibernateCore\Mappings\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="DbVersions\Scripts\Version1\BackUpData.sql" />
+    <EmbeddedResource Include="DbVersions\Scripts\Version1\BackUpDataDown.sql" />
+    <EmbeddedResource Include="DbVersions\Scripts\Version1\CreateTablesDown.sql" />
+    <EmbeddedResource Include="DbVersions\Scripts\Version1\CreateTablesUp.sql" />
+    <EmbeddedResource Include="DbVersions\Scripts\Version1\DefaultDataDown.sql" />
+    <EmbeddedResource Include="DbVersions\Scripts\Version1\DefaultDataUp.sql" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

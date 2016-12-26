@@ -1,0 +1,6 @@
+﻿INSERT INTO [dbo].[Role] ([Id], [Name]) VALUES (N'a7e9b083-8be8-450b-b79e-05b92fd7f074', N'Filler')
+INSERT INTO [dbo].[Role] ([Id], [Name]) VALUES (N'be67c4d1-bab6-4623-ae80-354d5985197c', N'Admin')
+
+INSERT INTO [dbo].[User] ([Id], [Email], [Password], [PasswordSalt], [Role_id]) VALUES (N'143a569c-41f7-4031-aafc-a50c0d12456c', N'Admin@gmail.com', N'qOwoGjKi6yvvR7O/sviN/A==', N'/E4to19z0Vcc7CBK6AUCLgQq6oo/jfbsrI1AVbTAkkA=', N'be67c4d1-bab6-4623-ae80-354d5985197c')
+INSERT INTO [dbo].[User] ([Id], [Email], [Password], [PasswordSalt], [Role_id]) VALUES (N'abb22630-c3ae-4191-81fd-67c92a3099bb', N'Filler@gmail.com', N'i6siJyN6vx9X6PzQLgHHJw==', N'K54ljFcqTONt06wwAmQhjvCBJuDYbcS+wCzlECwqpTE=', N'a7e9b083-8be8-450b-b79e-05b92fd7f074')
+INSERT INTO [dbo].[User] ([Id], [Email], [Password], [PasswordSalt], [Role_id]) VALUES (N'ef2b1bea-c9b6-4a46-bd0a-671d9c7c8035', N'Filler2@gmail.com', N'nv/j0tem3UWGa5ssfqTOuQ==', N'7jjsCcNzK/jTwvxK0mnIeTyUZ1f8SBg7D5WXz6bvjwk=', N'a7e9b083-8be8-450b-b79e-05b92fd7f074')

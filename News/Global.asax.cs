@@ -22,6 +22,7 @@ namespace News
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DatabaseConfig.MigrateDatabase(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             //GlobalConfiguration.Configuration.EnsureInitialized();
         }
     }

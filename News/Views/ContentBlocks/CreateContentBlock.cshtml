@@ -1,5 +1,10 @@
 ﻿@model News.Business.ViewModels.ContentBlockDesignModel
 
+@{
+    ViewBag.Title = "Content block";
+    Layout = "_Layout.cshtml";
+}
+
 <div class="popup-editor">
 
     <h2>Create Content Block</h2>
@@ -12,7 +17,7 @@
             @Html.ValidationSummary()
             <div class="row">
                 <label>Type</label>
-                <div class="control admin-dropdown type-dropdown">
+                <div class="input-field col s12">
                     @Html.EnumDropDownListFor(model => model.Type, new { @class = "form-control" })
                 </div>
             </div>
@@ -35,4 +40,3 @@
         </div>
     }
 </div>
-

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="phonecatApp">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -7,15 +7,14 @@
     @Styles.Render("~/Content/materialize/css/materialize.min.css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js")
-    @Scripts.Render("//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js")
+@*    @Scripts.Render("//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js")
+    @Scripts.Render("//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js")*@
 @*    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js")*@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
-<body ng-controller="PhoneListController">
+<body>
     <noscript><h3 class="error-massage">Увімкніть js</h3></noscript>
-    <hg-route></hg-route>
 
 
     <nav class="grey darken-3">
@@ -29,16 +28,22 @@
                 {
                     if (User.IsInRole("Admin"))
                     {
-                        <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                        <li class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
                             <a href="@Url.RouteUrl("ShowXml")"><i class="large material-icons print">print</i></a>
                         </li>
                     }
-                    <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                    <li class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
                         Вітаємо, @User.Identity.Name
                     </li>
-                    <li id="menu-item-309" class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                    <li class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
                        <a href="@Url.RouteUrl("LogOut")"><i class="large material-icons logout">power_settings_new</i></a>
                     </li>
+                    if (User.IsInRole("Admin"))
+                    {
+                        <li class="menu-item menu-item-type-post_type_archive menu-item-object-about menu-item-309">
+                            <a data-activates="slide-out" class="button-collapse"><i class="large material-icons">menu</i></a>
+                        </li>
+                    }
                 }
                 else
                 {
@@ -73,6 +78,11 @@
             </div>
         </div>
     </footer>
+
+    <ul id="slide-out" class="side-nav">
+      <li><a href="@Url.RouteUrl("CreateContentBlock")">Create content block</a></li>
+      <li><a href="@Url.RouteUrl("CreatePage")">Create flexi page</a></li>
+    </ul>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/materialize/materialize.min.js")

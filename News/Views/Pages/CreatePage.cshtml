@@ -1,5 +1,9 @@
 ﻿@model News.Business.ViewModels.PageDesignModel
 
+@{
+    ViewBag.Title = "Create Page";
+    Layout = "_Layout.cshtml";
+}
 <div class="popup-editor">
 
     <h2>Create Page</h2>
@@ -42,7 +46,7 @@
                         @EditorForBlock(index++, item)
                     </div>
                 }
-                <div class="control admin-dropdown">
+                <div class="input-field col s12">
                     @EditorForBlock(Model.ContentBlocks.Count)
                 </div>
             </div>

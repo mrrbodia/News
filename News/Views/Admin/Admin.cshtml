@@ -5,10 +5,18 @@
     var items = Model.Roles.OrderBy(c => c.Name)
         .Select(c => new SelectListItem { Value = c.Id, Text = c.Name, Selected = c.Id.Equals(Model.Roles.FirstOrDefault().Id) }).ToArray();
 }
-@foreach(var user in Model.Users)
-{
-    <div>@user.Email</div>
-    <div class="input-field col s12">
-        @Html.DropDownList("Roles", items)
+<div class="container">
+    <div class="row">
+        <h2>Left side Navigation bar (Fixed)</h2>
+
+        <p>
+            @foreach (var user in Model.Users)
+            {
+                <div>@user.Email</div>
+                <div class="input-field col s12">
+                    @Html.DropDownList("Roles", items)
+                </div>
+                }
+        </p>
     </div>
-}
+</div>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using News.Business.Models.Admin;
+using System.ComponentModel.DataAnnotations;
 
 namespace News.Business.ViewModels
 {
@@ -15,6 +16,7 @@ namespace News.Business.ViewModels
 
         public string Name { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
         public ContentBlockDesignModel()
