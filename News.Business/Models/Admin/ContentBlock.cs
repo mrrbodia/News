@@ -17,7 +17,6 @@ namespace News.Business.Models.Admin
         public enum BlockType
         {
             Html,
-            Feed,
             Redirect
         }
     }

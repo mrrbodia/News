@@ -2,6 +2,14 @@
 @{
     ViewBag.Title = "List";
 }
+<div>
+     @using (Html.BeginForm("SearchForNews", "Tidings", FormMethod.Get))
+    {
+        @Html.AntiForgeryToken()
+         <input name="key" type="text" />
+         <button type="submit">search</button>
+     }
+</div>
 @if (User.IsInRole("Filler"))
 {
     <div class="content">

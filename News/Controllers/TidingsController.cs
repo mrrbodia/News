@@ -109,12 +109,11 @@ namespace News.Controllers
             return View(AutoMapper.Mapper.Map<IList<TidingsViewModel>>(news));
         }
 
-        [HttpPost]
-        [ValidateInput(true)]
-        public JsonResult SearchForNews(string key)
+        [HttpGet]
+        public ActionResult SearchForNews(string key)
         {
             var list = tidingManager.Search(key);
-            return Json(list);
+            return View(AutoMapper.Mapper.Map<IList<TidingsViewModel>>(list));
         }
     }
 }

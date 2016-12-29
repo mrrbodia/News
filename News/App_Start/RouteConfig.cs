@@ -50,6 +50,12 @@ namespace News
            );
 
             routes.MapRoute(
+             name: "UpdateUserRole",
+             url: "user/update",
+             defaults: new { controller = "Admin", action = "UpdateUserRole" }
+            );
+
+            routes.MapRoute(
              name: "Admin",
              url: "admin",
                 defaults: new { controller = "Admin", action = "Admin" }
@@ -68,6 +74,12 @@ namespace News
             );
 
             routes.MapRoute(
+             name: "SearchForNews",
+             url: "SearchForNews",
+             defaults: new { controller = "Tidings", action = "SearchForNews" }
+            );
+
+            routes.MapRoute(
              name: "Home",
              url: "",
                 defaults: new { controller = "Tidings", action = "List" }
@@ -83,6 +95,12 @@ namespace News
              name: "CreatePage",
              url: "CreatePage",
                 defaults: new { controller = "Pages", action = "CreatePage" }
+            );
+
+            routes.MapRoute(
+             name: "Search",
+             url: "search",
+                defaults: new { controller = "Tidings", action = "Search" }
             );
 
             routes.MapRoute(

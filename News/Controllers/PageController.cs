@@ -73,7 +73,7 @@ namespace News.Controllers
 
                 if (block.Type == ContentBlock.BlockType.Redirect)
                 {
-                    return RedirectToRoute("CustomPage", new { url = block.Content });
+                    return Redirect(block.Content);
                 }
 
                 blocks.Add(block);

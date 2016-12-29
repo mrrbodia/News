@@ -25,6 +25,7 @@ namespace News.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             return View();
@@ -39,6 +40,7 @@ namespace News.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult Register(RegisterViewModel model)
         {
             if (ModelState.IsValid && model.Password.Equals(model.RepeatPassword))

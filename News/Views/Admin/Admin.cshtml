@@ -2,21 +2,30 @@
 @{
     ViewBag.Title = "Admin";
     
-    var items = Model.Roles.OrderBy(c => c.Name)
-        .Select(c => new SelectListItem { Value = c.Id, Text = c.Name, Selected = c.Id.Equals(Model.Roles.FirstOrDefault().Id) }).ToArray();
 }
 <div class="container">
     <div class="row">
-        <h2>Left side Navigation bar (Fixed)</h2>
+        <h2>Hi Admin!</h2>
 
-        <p>
+        <div>
             @foreach (var user in Model.Users)
             {
-                <div>@user.Email</div>
-                <div class="input-field col s12">
-                    @Html.DropDownList("Roles", items)
+                <div class="row" style="margin-top: 40px">
+                    @using (Html.BeginForm("UpdateUserRole", "Admin", FormMethod.Post))
+                    {
+                        var items = Model.Roles.OrderBy(c => c.Name)
+        .Select(c => new SelectListItem { Value = c.Id, Text = c.Name, Selected = c.Name.Equals(user.Role.Name) }).ToArray();
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("userId", user.Id);
+                        <div class="row" style="margin-left: 20px">@user.Email</div>
+                        <div class="row input-field col s12">
+                        
+                        @Html.DropDownList("roleId", items)
+                        </div>
+                        <button class="btn waves-effect waves-light dark-blue-grey left" style="margin-left: 20px" type="submit">save</button>
+                    }
                 </div>
-                }
-        </p>
+            }
+        </div>
     </div>
 </div>

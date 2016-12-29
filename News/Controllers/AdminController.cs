@@ -75,11 +75,11 @@ namespace News.Controllers
                 user.Role = role;
                 userManager.Update(user);
 
-                return Json(true);
+                return RedirectToAction("Admin");
             }
             catch
             {
-                return Json(false);
+                return RedirectToAction("Admin");
             }
         }
 

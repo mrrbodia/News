@@ -299,7 +299,6 @@
     <Content Include="Views\Tidings\Update.cshtml" />
     <Content Include="Views\Tidings\Xml.cshtml" />
     <Content Include="Views\Tidings\Tiding.cshtml" />
-    <Content Include="Views\Tidings\Search.cshtml" />
     <Content Include="Views\Comment\Create.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Scripts\jquery.validate.min.js.map">
@@ -323,6 +322,7 @@
     <Content Include="Views\Pages\CreatePage.cshtml" />
     <Content Include="Views\Pages\_Layout.cshtml" />
     <Content Include="Views\ContentBlocks\_Layout.cshtml" />
+    <Content Include="Views\Tidings\SearchForNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\themes\materialize\font\material-design-icons\" />

@@ -1,8 +1,6 @@
 ﻿@model  News.Business.ViewModels.CommentViewModel
 @using (Html.BeginForm("AddComment", "Comment", FormMethod.Post, new { onsubmit = "return confirmCaptcha(document.getElementById('cptchid').value)" }))
 {
-
-
     <fieldset>
         <h5 class="blue-grey-text">
             <p>Залиште свій коментар</p>
@@ -38,7 +36,7 @@
         </div>
         <p>
             <button class="btn waves-effect waves-light dark-blue-grey left" type="submit">Опублікувати</button>
-            <button class="btn waves-effect waves-light red rigth" type="reset">Опублікувати</button>
+            @*<button class="btn waves-effect waves-light red rigth" type="reset">Опублікувати</button>*@
         </p>
     </fieldset>
 }
